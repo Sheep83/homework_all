@@ -86,11 +86,11 @@ def customer_pet_count(customer_array)
   if customer_array[:pets][0].kind_of?(NilClass)
     count = 0
     else
-    count = customer_array[:pets][0].length / 4
+    count = customer_array[:pets][0].length / customer_array[:pets][0].keys.count
   end
 return count
 end
-#which is much nicer as it checks how many keys exist for each pet then divides by 4 to get the pet count and deals with an empty array through (NilClass)
+#which is much nicer as it checks how many keys exist for each pet then divides by the number of keys present to get the pet count. deals with an empty array through (NilClass)
 
 def add_pet_to_customer(customer_array, pet_hash)
   customer_array[:pets] << pet_hash
