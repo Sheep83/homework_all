@@ -8,6 +8,7 @@ class Song
   attr_reader :artist
   attr_reader :title
 
+
   def initialize(artist, title)
     @artist = artist
     @title = title
