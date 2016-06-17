@@ -12,13 +12,13 @@ class TestSong < Minitest::Test
       song2 = Song.new("Rolling Stones", "Gimme Shelter")
       song3 = Song.new("Foo Fighters", "Everlong")
       song4 = Song.new("Led Zeppelin", "The Song Remains The Same") 
-      @songs = [song1, song2, song3, song4] 
+      @song_array = [song1, song2, song3, song4] 
       # binding.pry
     end
 
     def test_song_artist_and_title_from_array
-    assert_equal( "Pink Floyd", @songs[0].artist )
-    assert_equal( "Comfortably Numb", @songs[0].title )
+    assert_equal( "Pink Floyd", @song_array[0].artist )
+    assert_equal( "Comfortably Numb", @song_array[0].title )
     end
 
 

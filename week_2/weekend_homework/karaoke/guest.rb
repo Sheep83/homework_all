@@ -12,11 +12,11 @@ class Guest
     @cash = cash
   end
 
-  # def add_song_to_room(song_to_add)
-  #   # binding.pry
-  #   @room.song.push(song_to_add)
+  def add_song_to_room(song_to_add)
+    # binding.pry
+    
   
-  # end
+  end
 
 
 end
