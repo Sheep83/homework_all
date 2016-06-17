@@ -32,5 +32,7 @@ class TestBar < Minitest::Test
     assert_equal("Brian", @bar.rooms[1].guests[0].name)
   end
 
+  
+
 end
 
