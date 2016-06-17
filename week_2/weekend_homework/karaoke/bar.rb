@@ -1,20 +1,20 @@
 
 require 'pry-byebug'
-require_relative('songs')
-require_relative('rooms')
-require_relative('guests')
+require_relative('song')
+require_relative('room')
+require_relative('guest')
 
 
 class Bar
-  attr_reader :rooms
-  attr_reader :playlist
+  attr_accessor :rooms
+  attr_accessor :songs
   
-  def initialize(rooms, playlist)
-  @playlist = playlist
-  @rooms = rooms
+  def initialize(rooms, songs, guests)
+    @rooms = rooms
+    @songs = songs
+    @guests = guests
   end
-
-
+  
 end
 
 

@@ -1,8 +1,8 @@
 
 require 'pry-byebug'
 require_relative('bar')
-require_relative('guests')
-require_relative('rooms')
+require_relative('guest')
+require_relative('room')
 
 class Song
   attr_reader :artist
