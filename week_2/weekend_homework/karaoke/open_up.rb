@@ -26,13 +26,13 @@ guest4 = Guest.new("Amelia", 0)
 @bar = Bar.new( @room_array, @song_array, @guest_array, 1000 )
 @viewer = Viewer.new( @bar )
 
-class Open
+class Open 
   
-  attr_reader :selected_guest
-  attr_reader :selected_song
-  attr_reader :selected_room
+  attr_accessor :selected_guest
+  attr_accessor :selected_song
+  attr_accessor :selected_room
 
-  def initialize ( bar, viewer )
+  def initialize ( bar, viewer, rooms, songs )
     @selected_guest = 0
     @selected_song = 0
     @selected_room = 0
@@ -40,7 +40,7 @@ class Open
 
 end
 
-#define procedures
+#define menu procedures
 guest_select = proc {
 choice = gets.chomp
 case when choice == "1"
@@ -56,24 +56,20 @@ case when choice == "4"
 @selected_guest = @bar.guests[3]
 end}
 #############################################################
-room_select_guest = proc {
+room_select = proc {
 choice = gets.chomp
 case when choice == "1"
 @selected_room = @bar.rooms[0]
-@bar.add_guest_to_room(@selected_guest, @selected_room, @bar)
 # binding.pry
 end
 case when choice == "2"
 @selected_room = @bar.rooms[1]
-@bar.add_guest_to_room(@selected_guest, @selected_room, @bar)
 end
 case when choice == "3"
 @selected_room = @bar.rooms[2]
-@bar.add_guest_to_room(@selected_guest, @selected_room, @bar)
 end
 case when choice == "4"
 @selected_room = @bar.rooms[3]
-@bar.add_guest_to_room(@selected_guest, @selected_room, @bar)
 end}
 #############################################################
 song_select = proc {
@@ -90,43 +86,31 @@ end
 case when choice == "4"
 @selected_song = @bar.songs[3]
 end}
+
 #############################################################
-room_select_song = proc {
-choice = gets.chomp
-case when choice == "1"
-@selected_song = @bar.songs[0]
-@bar.add_song_to_room(@selected_song, @selected_room)
-end
-case when choice == "2"
-@selected_song = @bar.songs[1]
-@bar.add_song_to_room(@selected_song, @selected_room)
-end
-case when choice == "3" 
-@selected_song = @bar.songs[2]
-@bar.add_song_to_room(@selected_song, @selected_room)
-end
-case when choice == "4"
-@selected_song = @bar.songs[3]
-@bar.add_song_to_room(@selected_song, @selected_room)
-end}
+#main program start
 #############################################################
-@open_bar = Open.new(@bar, @viewer)
-# binding.pry
+
+@open_bar = Open.new(@bar, @viewer, @room_array, @song_array)
+
+@viewer.welcome
 loop do
-binding.pry
+# binding.pry
 @viewer.menu
 main_menu_choice = gets.chomp
   case when main_menu_choice == "1"
   @viewer.menu_guest_select
   guest_select.call
   @viewer.menu_room_select
-  room_select_guest.call
+  room_select.call
+  @bar.add_guest_to_room(@selected_guest, @selected_room, @bar)
   end
   case when main_menu_choice == "2"
   @viewer.menu_song_select
   song_select.call
   @viewer.menu_room_select
-  room_select_song.call
+  room_select.call
+  @bar.add_song_to_room(@selected_song, @selected_room, @bar)
   end
   case when main_menu_choice == "x"
   break

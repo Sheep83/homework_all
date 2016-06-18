@@ -16,7 +16,7 @@ class Viewer
   return bar.guests.size
   end
 
-  def menu
+  def welcome
     system("clear")
     print "Welcome to the Code Clan Caraoke Bar!."
     sleep 1
@@ -27,6 +27,9 @@ class Viewer
     puts
     puts "Our legal team suggested we change the name :-/"
     sleep 1
+  end
+
+  def menu
     system("clear")
     puts "Please select an option..."
     puts "1 - Add guest to room"
@@ -61,7 +64,7 @@ class Viewer
 
   def menu_room_select
     system("clear")
-    puts "Choose room..."
+    puts "Choose room to add to..."
     puts "1 - #{bar.rooms[0].name}"
     puts "2 - #{bar.rooms[1].name}"
     puts "3 - #{bar.rooms[2].name}"

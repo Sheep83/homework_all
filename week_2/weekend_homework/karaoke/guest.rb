@@ -12,7 +12,7 @@ class Guest
     @cash = cash
   end
 
-  def add_song_to_room(song, room)
+  def add_song_to_room(song, room, bar)
     # binding.pry
     room.songs.push(song)
   end

@@ -35,9 +35,9 @@ class Bar < Guest
       bar.guests.delete(guest)
   end    
 
-  def add_song_to_room(song, room)
-    # binding.pry
-    room.songs.push(song)
+  def add_song_to_room(song, room, bar)
+      # binding.pry
+      room.songs.push(song)
   end
 
 end

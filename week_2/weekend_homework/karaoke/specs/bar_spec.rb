@@ -59,7 +59,7 @@ class TestBar < Minitest::Test
   end
 
   def test_class_inheritance_from_guest
-    @bar.add_song_to_room(@song_array[0], @room_array[0])
+    @bar.add_song_to_room(@song_array[0], @room_array[0], @bar)
     # binding.pry
     assert_equal( "Comfortably Numb", @bar.rooms[0].songs[0].title)
   end
