@@ -18,17 +18,17 @@ class Bar < Guest
     @cash = cash
   end
 
-  def add_guest_to_room(guest, room)
+  def add_guest_to_room(guest, room, bar)
       # binding.pry
-      room.guests.push(guest)
+      unless room.guests.size == room.capacity || guest.cash < room.fee
+        room.guests.push(guest)
+        guest.cash -= room.fee
+        bar.cash += room.fee
+      end
   end
 
   def remove_guest_from_room(guest, room)
-      room.guests.each do |x|
-        if x.name == guest.name
-          room.guests.delete(x)
-        end
-        end
+      room.guests.delete(guest)
   end 
 
   def remove_guest_from_bar(guest, bar)

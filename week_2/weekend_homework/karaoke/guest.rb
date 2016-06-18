@@ -4,7 +4,7 @@ require_relative('room')
 require_relative('song')
 
 class Guest
-  attr_accessor :name
+  attr_reader :name
   attr_accessor :cash
 
   def initialize(name, cash)
