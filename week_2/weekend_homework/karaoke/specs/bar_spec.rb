@@ -32,7 +32,11 @@ class TestBar < Minitest::Test
     assert_equal("Brian", @bar.rooms[1].guests[0].name)
   end
 
-  
+  def test_remove_guest_from_room
+    @bar.add_guest_to_room(@guest_array[0], @room_array[1])
+    assert_equal("Brian", @bar.rooms[1].guests[0].name)
+    @bar.remove_guest_from_room(@guest_array[0], @room_array[1])
+    assert_equal([], @bar.rooms[1].guests)
+  end
 
 end
-

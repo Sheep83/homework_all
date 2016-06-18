@@ -22,7 +22,14 @@ class Bar
       room.guests.push(guest)
   end
 
-  
+  def remove_guest_from_room(guest, room)
+      room.guests.each do |x|
+        if x.name == guest.name
+          room.guests.delete(x)
+        end
+        end
+  end      
+
 end
 
 
