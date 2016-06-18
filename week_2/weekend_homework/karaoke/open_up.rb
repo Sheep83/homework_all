@@ -95,7 +95,7 @@ end}
 
 @viewer.welcome
 loop do
-# binding.pry
+binding.pry
 @viewer.menu
 main_menu_choice = gets.chomp
   case when main_menu_choice == "1"
@@ -111,6 +111,18 @@ main_menu_choice = gets.chomp
   @viewer.menu_room_select
   room_select.call
   @bar.add_song_to_room(@selected_song, @selected_room, @bar)
+  end
+  case when main_menu_choice == "3"
+  @viewer.menu_guest_select
+  guest_select.call
+  @viewer.menu_room_select
+  room_select.call
+  @bar.remove_guest_from_room(@selected_guest, @selected_room,)
+  end
+  case when main_menu_choice == "4"
+  @viewer.menu_guest_select
+  guest_select.call
+  @bar.remove_guest_from_bar(@selected_guest, @bar)
   end
   case when main_menu_choice == "x"
   break
