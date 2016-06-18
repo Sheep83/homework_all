@@ -39,4 +39,10 @@ class TestBar < Minitest::Test
     assert_equal([], @bar.rooms[1].guests)
   end
 
+  def test_remove_guest_from_bar
+    @bar.remove_guest_from_bar(@guest_array[0], @bar)
+    # binding.pry
+    assert_equal( 3, @bar.guests.size )
+  end
+
 end

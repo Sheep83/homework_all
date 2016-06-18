@@ -5,7 +5,7 @@ require_relative('room')
 require_relative('guest')
 
 
-class Bar
+class Bar < Guest
   attr_accessor :rooms
   attr_accessor :songs
   attr_accessor :guests
@@ -19,6 +19,7 @@ class Bar
   end
 
   def add_guest_to_room(guest, room)
+      # binding.pry
       room.guests.push(guest)
   end
 
@@ -28,7 +29,11 @@ class Bar
           room.guests.delete(x)
         end
         end
-  end      
+  end 
+
+  def remove_guest_from_bar(guest, bar)
+      bar.guests.delete(guest)
+  end     
 
 end
 
