@@ -70,4 +70,7 @@ class TestBar < Minitest::Test
     assert_equal(0, @bar.rooms[0].guests.size) 
   end   
 
+  def test_guest_cash_balance
+    assert_equal(500, @bar.guests[0].cash)
+  end
 end

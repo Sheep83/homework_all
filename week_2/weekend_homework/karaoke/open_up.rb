@@ -124,6 +124,14 @@ main_menu_choice = gets.chomp
   guest_select.call
   @bar.remove_guest_from_bar(@selected_guest, @bar)
   end
+  case when main_menu_choice == "5"
+  @viewer.menu_guest_select
+  guest_select.call
+  @viewer.report_guest_balance( @selected_guest )
+  end
+  case when main_menu_choice == "6"
+  @viewer.report_bar_balance( @bar )
+  end
   case when main_menu_choice == "x"
   break
   end

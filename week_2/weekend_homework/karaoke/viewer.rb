@@ -25,13 +25,12 @@ class Viewer
     print "."
     sleep 1
     puts
-    puts "Our legal team suggested we change the name :-/"
-    sleep 1
   end
 
   def menu
     system("clear")
     puts "Please select an option..."
+    puts "***************************"
     puts "1 - Add guest to room"
     puts "2 - Add song to room"
     puts "3 - Remove guest from room"
@@ -39,6 +38,7 @@ class Viewer
     puts "5 - Guest cash balance"
     puts "6 - Bar cash balance"
     puts "7 - Current room occupancy"
+    puts "***************************"
     puts
     puts "X - Exit"
   end
@@ -69,6 +69,16 @@ class Viewer
     puts "2 - #{bar.rooms[1].name}"
     puts "3 - #{bar.rooms[2].name}"
     puts "4 - #{bar.rooms[3].name}"
+  end
+
+  def report_guest_balance( guest )
+    puts "#{guest.name} has #{guest.cash} remaining..."
+    sleep 2
+  end
+
+  def report_bar_balance( bar )
+    puts "Current cash in the bar till is #{bar.cash}..."
+    sleep 2
   end
 
 end

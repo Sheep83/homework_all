@@ -11,14 +11,14 @@ class Bar < Guest
   attr_accessor :guests
   attr_accessor :cash
 
-  def initialize(rooms, songs, guests, cash)
+  def initialize( rooms, songs, guests, cash )
     @rooms = rooms
     @songs = songs
     @guests = guests
     @cash = cash
   end
 
-  def add_guest_to_room(guest, room, bar)
+  def add_guest_to_room( guest, room, bar )
       # binding.pry
       unless room.guests.size == room.capacity || guest.cash < room.fee
         room.guests.push(guest)
@@ -27,17 +27,21 @@ class Bar < Guest
       end
   end
 
-  def remove_guest_from_room(guest, room)
+  def remove_guest_from_room( guest, room )
       room.guests.delete(guest)
   end 
 
-  def remove_guest_from_bar(guest, bar)
+  def remove_guest_from_bar( guest, bar )
       bar.guests.delete(guest)
   end    
 
-  def add_song_to_room(song, room, bar)
+  def add_song_to_room( song, room, bar )
       # binding.pry
       room.songs.push(song)
+  end
+
+  def obtain_guest_balance( guest )
+    return guest.cash
   end
 
 end
