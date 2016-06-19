@@ -34,10 +34,6 @@ class Bar < Guest
       bar.guests.delete(guest)
   end    
 
-  # def add_song_to_room( song, room, bar )
-  #     room.songs.push(song)
-  # end
-
   def obtain_guest_balance( guest )
     return guest.cash
   end

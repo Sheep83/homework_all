@@ -25,7 +25,7 @@ class Viewer
     print "."
     sleep 1
     puts
-    puts "Welcome to the Code Clan Caraoke Bar!"
+    puts "Welcome to the CodeClan Caraoke Bar!"
     sleep 2
   end
 
