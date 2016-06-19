@@ -18,13 +18,15 @@ class Viewer
 
   def welcome
     system("clear")
-    print "Welcome to the Code Clan Caraoke Bar!."
+    print "Loading,"
     sleep 1
     print "."
     sleep 1
     print "."
     sleep 1
     puts
+    puts "Welcome to the Code Clan Caraoke Bar!"
+    sleep 2
   end
 
   def menu
@@ -77,8 +79,25 @@ class Viewer
   end
 
   def report_bar_balance( bar )
+    system("clear")
     puts "Current cash in the bar till is #{bar.cash}..."
     sleep 2
+  end
+
+  def report_room_status( room )
+    system("clear")
+    puts "Room - #{room.name}"
+    sleep 1
+    puts "Current guests - "
+    room.guests.each do |guest|
+      puts "#{guest.name}"
+    end
+    sleep 2
+    puts "Current songs - "
+    room.songs.each do |song|
+      puts "#{song.title} by #{song.artist}"
+      sleep 2
+    end
   end
 
 end

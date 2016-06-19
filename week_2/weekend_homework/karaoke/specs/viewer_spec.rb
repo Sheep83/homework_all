@@ -32,7 +32,6 @@ class TestViewer < Minitest::Test
   end
 
   def test_report_guests_in_bar
-    # binding.pry
     assert_equal(4, @viewer.report_guests_in_bar)
   end
 

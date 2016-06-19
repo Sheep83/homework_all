@@ -19,7 +19,6 @@ class Bar < Guest
   end
 
   def add_guest_to_room( guest, room, bar )
-      # binding.pry
       unless room.guests.size == room.capacity || guest.cash < room.fee
         room.guests.push(guest)
         guest.cash -= room.fee
@@ -35,10 +34,9 @@ class Bar < Guest
       bar.guests.delete(guest)
   end    
 
-  def add_song_to_room( song, room, bar )
-      # binding.pry
-      room.songs.push(song)
-  end
+  # def add_song_to_room( song, room, bar )
+  #     room.songs.push(song)
+  # end
 
   def obtain_guest_balance( guest )
     return guest.cash

@@ -12,7 +12,6 @@ class TestRoom < Minitest::Test
    room3 = Room.new("Bangin' Heads", 5)
    room4 = Room.new("Croon 'n Swoon", 6) 
    @room_array = [room1, room2, room3, room4]
-   # binding.pry   
   end
 
   def test_room_properties_from_array

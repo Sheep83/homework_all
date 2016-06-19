@@ -7,7 +7,6 @@ require_relative('guest')
 require_relative('bar')
 require_relative('viewer')
 
-
 song1 = Song.new("Pink Floyd", "Comfortably Numb")
 song2 = Song.new("Rolling Stones", "Gimme Shelter")
 song3 = Song.new("Foo Fighters", "Everlong")
@@ -95,7 +94,6 @@ end}
 
 @viewer.welcome
 loop do
-binding.pry
 @viewer.menu
 main_menu_choice = gets.chomp
   case when main_menu_choice == "1"
@@ -117,7 +115,7 @@ main_menu_choice = gets.chomp
   guest_select.call
   @viewer.menu_room_select
   room_select.call
-  @bar.remove_guest_from_room(@selected_guest, @selected_room,)
+  @bar.remove_guest_from_room(@selected_guest, @selected_room)
   end
   case when main_menu_choice == "4"
   @viewer.menu_guest_select
@@ -132,74 +130,16 @@ main_menu_choice = gets.chomp
   case when main_menu_choice == "6"
   @viewer.report_bar_balance( @bar )
   end
+  case when main_menu_choice == "7"
+  @viewer.menu_room_select
+  room_select.call
+  @viewer.report_room_status( @selected_room )
+  end
   case when main_menu_choice == "x"
   break
   end
 end
-  
-  
 
-
-  # if gets.chomp == "1"
-  #   @selected_guest = @bar.guests[0]
-  #   @viewer.menu_room_select
-  #   gets.chomp
-  #   if gets.chomp == "1"
-  #     @selected_room = @bar.rooms[0]
-  #     @bar.add_guest_to_room(@selected_guest, @selected_room, @bar)
-  #   elsif gets.chomp == "2"
-  #     @selected_room = @bar.rooms[1]
-  #   elsif gets.chomp == "3"
-  #     @selected_room = @bar.rooms[2]
-  #   elsif gets.chomp == "4"
-  #     @selected_room = @bar.rooms[3]
-  #   end
-  # elsif gets.chomp == "2"
-  #   @selected_guest = @bar.guests[1]
-  #   @viewer.menu_room_select
-  #   gets.chomp
-  #   if gets.chomp == "1"
-  #     @selected_room = @bar.rooms[0]
-  #     @bar.add_guest_to_room(@selected_guest, @selected_room, @bar)
-  #   elsif gets.chomp == "2"
-  #     @selected_room = @bar.rooms[1]
-  #   elsif gets.chomp == "3"
-  #     @selected_room = @bar.rooms[2]
-  #   elsif gets.chomp == "4"
-  #     @selected_room = @bar.rooms[3]
-  #   end
-  # elsif gets.chomp == "3"
-  #   @selected_guest = @bar.guests[2]
-  #   @viewer.menu_room_select
-  #   gets.chomp
-  #   if gets.chomp == "1"
-  #     @selected_room = @bar.rooms[0]
-  #     @bar.add_guest_to_room(@selected_guest, @selected_room, @bar)
-  #   elsif gets.chomp == "2"
-  #     @selected_room = @bar.rooms[1]
-  #   elsif gets.chomp == "3"
-  #     @selected_room = @bar.rooms[2]
-  #   elsif gets.chomp == "4"
-  #     @selected_room = @bar.rooms[3]
-  #   end
-  # elsif gets.chomp == "4"
-  #   @selected_guest = @bar.guests[3]
-  #   @viewer.menu_room_select
-  #   gets.chomp
-  #   if gets.chomp == "1"
-  #     @selected_room = @bar.rooms[0]
-  #     @bar.add_guest_to_room(@selected_guest, @selected_room, @bar)
-  #   elsif gets.chomp == "2"
-  #     @selected_room = @bar.rooms[1]
-  #   elsif gets.chomp == "3"
-  #     @selected_room = @bar.rooms[2]
-  #   elsif gets.chomp == "4"
-  #     @selected_room = @bar.rooms[3]
-  #   end
-  # end
-# end
-# elsif gets.chomp = "2"
-#   @viewer.menu_song_select
 
 
 

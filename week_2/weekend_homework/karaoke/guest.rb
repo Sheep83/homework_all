@@ -13,9 +13,7 @@ class Guest
   end
 
   def add_song_to_room(song, room, bar)
-    # binding.pry
     room.songs.push(song)
   end
-
 
 end
