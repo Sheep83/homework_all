@@ -32,15 +32,16 @@ class Viewer
   def menu
     system("clear")
     puts "Please select an option..."
-    puts "***************************"
-    puts "1 - Add guest to room"
-    puts "2 - Add song to room"
-    puts "3 - Remove guest from room"
-    puts "4 - Remove guest from bar"
-    puts "5 - Guest cash balance"
-    puts "6 - Bar cash balance"
-    puts "7 - Current room occupancy"
-    puts "***************************"
+    puts
+    puts "*****************************"
+    puts " 1 - Add guest to room"
+    puts " 2 - Add song to room"
+    puts " 3 - Remove guest from room"
+    puts " 4 - Remove guest from bar"
+    puts " 5 - Guest cash balance"
+    puts " 6 - Bar cash balance"
+    puts " 7 - Current room occupancy"
+    puts "*****************************"
     puts
     puts "X - Exit"
   end
@@ -48,29 +49,29 @@ class Viewer
   def menu_guest_select
     system("clear")
     puts "Choose guest..."
-    puts "1 - #{bar.guests[0].name}"
-    puts "2 - #{bar.guests[1].name}"
-    puts "3 - #{bar.guests[2].name}"
-    puts "4 - #{bar.guests[3].name}"
+    count = 0
+    bar.guests.each do |guest|
+      puts "#{count += 1} - #{guest.name}"
+    end
   end
 
 
   def menu_song_select
     system("clear")
     puts "Choose song..."
-    puts "1 - #{bar.songs[0].title} - #{bar.songs[0].artist}"
-    puts "2 - #{bar.songs[1].title} - #{bar.songs[1].artist}"
-    puts "3 - #{bar.songs[2].title} - #{bar.songs[2].artist}"
-    puts "4 - #{bar.songs[3].title} - #{bar.songs[3].artist}"
+    count = 0
+    bar.songs.each do |song|
+      puts "#{count += 1} - #{song.title} by #{song.artist}"
+    end
   end
 
   def menu_room_select
     system("clear")
     puts "Choose room to add to..."
-    puts "1 - #{bar.rooms[0].name}"
-    puts "2 - #{bar.rooms[1].name}"
-    puts "3 - #{bar.rooms[2].name}"
-    puts "4 - #{bar.rooms[3].name}"
+    count = 0
+    bar.rooms.each do |room|
+      puts "#{count += 1} - #{room.name}"
+    end
   end
 
   def report_guest_balance( guest )
