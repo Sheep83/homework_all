@@ -59,6 +59,19 @@ def remove_pet_by_name(hash, pet_name)
 return nil
 end
 
+### solution
+# def remove_pet_by_name(pet_shop, pet_name)
+#   pets = pets_in_stock(pet_shop)
+#   index = 0
+#   match = nil
+# for pet in pets
+#   if (pet[:name] == pet_name)
+#     match = pet
+#     break
+#   end
+#   index += 1
+# end
+######
 def add_pet_to_stock(pet_shop_hash, new_pet_hash)
   pet_shop_hash[:pets] << new_pet_hash
 end
