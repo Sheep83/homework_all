@@ -83,6 +83,8 @@ Using the SQL Database file given to you as the source of data to answer the que
 
   SELECT name, price FROM shows ORDER BY price ASC OFFSET 2 LIMIT 1;
 
+
+
   16. Select the names of all users whose names start with the letter "N".
 
   SELECT name FROM users WHERE name LIKE 'N%';
@@ -109,4 +111,14 @@ Using the SQL Database file given to you as the source of data to answer the que
 
   20. Select all of the user names and the count of shows they're going to see.
 
+  SELECT users, COUNT(shows) FROM shows_users
+  INNER JOIN users ON users.id = shows_users.user_id
+  INNER JOIN shows ON shows.id = shows_users.show_id
+  GROUP BY users;
+
   21. SELECT all users who are going to a show at 17:15.
+
+  SELECT users.name FROM shows_users
+  INNER JOIN users ON users.id = shows_users.user_id
+  INNER JOIN times on times.show_id = shows_users.show_id
+  WHERE times.time = '17:15';

@@ -1,8 +1,9 @@
 
-SELECT users.id, COUNT(times.time = '17.15') WHERE
-SELECT times.show_id, 
-INNER JOIN shows_users ON shows_users.show_id = users.id
-INNER JOIN times ON times.time = '17.15';
+  SELECT users.name FROM shows_users
+  INNER JOIN users ON users.id = shows_users.user_id
+  INNER JOIN times on times.show_id = shows_users.show_id
+  WHERE times.time = '17:15';
+
 
 
 
