@@ -34,22 +34,10 @@ class Pet
       end
   end
 
-  # def artist()
-  #   sql = "SELECT * FROM artists WHERE id = #{@artist_id}"
-  #   artist_data = @runner.run(sql)
-  #   artist = artist_data.map { |artist_data| Artist.new(artist_data, @runner) }
-  #   result = artist.first
-  #   binding.pry
-  #   return result
-  # end
-
-  # def self.all(runner)
-  #   sql = "SELECT * FROM albums"
-  #   albums_data = runner.run( sql )
-  #   albums = albums_data.map { |album_data| Album.new(album_data, runner )}
-  #   return albums
-  # end
-
+  def delete(id, runner)
+      sql = "DELETE FROM pets WHERE id = #{@id}"
+      runner.run( sql )
+  end
 
 end
 

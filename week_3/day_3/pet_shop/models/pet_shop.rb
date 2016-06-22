@@ -28,20 +28,44 @@ class PetShop
     pets = all_pets.map { |pets| Pet.new(pets, @runner)}
   end
 
+  def self.all(shop_id, runner)
+      sql = "SELECT * FROM pet_shops"
+      shop_data = runner.run( sql )
+      shops = shop_data.map { |shop_data| Pet.new(shop_data, runner )}
+      for shop in shops
+      # binding.pry
+        if shop.id == shop_id
+          puts "Pet shop id number #{shop.id} is #{shop.name}"
+      nil
+        end
+      end
+  end
 
+  def update(options)
+      db = PG.connect( {dbname: 'another_pet_shop', host: 'localhost' } )
+      if options['name']
+        @name = options['name']
+      end
+        if options['stock_type']
+          @stock_type = options['stock_type']
+        end
+        if options['address']
+          @address = options['address']
+        end
 
-  # def albums()
-  #   #query the database for artist's albums
-  #   #make album objects
-  #   sql = "SELECT * FROM albums WHERE artist_id = #{@id}"
-  #   albums_data = @runner.run(sql)
+      sql = "UPDATE pet_shops SET 
+      name = '#{@name}', 
+      stock_type = '#{@stock_type}', 
+      address = '#{@address}' 
+      WHERE id = #{@id}"
+      db.exec(sql)
+      db.close
+  end
 
-  #   albums = albums_data.map { |album_data| Album.new(album_data, @runner) }
-  #   return albums 
-  #   binding.pry
-  #   nil
-
-  # end
+  def delete(id, runner)
+      sql = "DELETE FROM pet_shops WHERE id = #{@id}"
+      runner.run( sql )
+  end
 
 end
 

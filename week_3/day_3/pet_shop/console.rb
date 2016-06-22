@@ -19,19 +19,14 @@ pet4 = Pet.new( {'name' => 'Spot', 'type' => 'Dog', 'pet_shop_id' => pet_shop_2.
 pet3.save()
 pet4.save()
 
-# pet_shop_1.all_pets()     # returns all pets in pet_shop 1 ***working***
+pet_shop_1.all_pets()     # returns all pets in pet_shop 1 ***working***
 
-Pet.all('Theo', runner) #returns pet shop id for a given pet name
-# binding.pry
-nil
+Pet.all('Theo', runner) #returns pet shop id for a given pet name ***working***
 
+PetShop.all('1', runner)  #returns pet shop name for a given id ***working***
 
+pet_shop_1.update( {'name' => 'New Improved Cat Emporium'} ) #updates pet shop details from given values #***messy but working***
 
+pet_shop_1.delete('1', runner)  #***not working - foreighn key constraint, delete paets from stock first?
 
-
-
-
-# puts "artist name #{ artist.name }"
-
-
-# album2 = Album.new( { 'name' => 'Whats the Story', 'artist_id' => artist.id }, runner )
+pet1.delete('2', runner) #***also not working, not sure why :-(***
