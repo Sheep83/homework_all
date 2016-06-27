@@ -1,0 +1,51 @@
+body {
+  background: black;
+  color: #f2f2f2;
+  background-image: url("http://i1174.photobucket.com/albums/r607/sheep831/14wJuLo.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+header {
+
+margins: auto;
+
+}
+
+footer {
+  background: black;
+  color: #f2f2f2;
+}
+
+.navbar {
+  color: gray;
+
+}
+
+
+.links {
+  padding: 50px 5px;
+}
+
+a:link {
+    color: #1a66ff;
+}
+
+a:visited {
+    color: #6699ff;
+  }
+
+#footer {display:none;}
+
+a:hover { 
+    background-color: #003399;
+}
+
+
+
+
+
+
+
+

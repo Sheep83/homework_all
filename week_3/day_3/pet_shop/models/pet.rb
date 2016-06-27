@@ -22,16 +22,20 @@ class Pet
   end
 
   def self.all(pet_name, runner)
-      sql = "SELECT * FROM pets"
-      pet_data = runner.run( sql )
-      pets = pet_data.map { |pet_data| Pet.new(pet_data, runner )}
-      for pet in pets
-      # binding.pry
-        if pet.name == pet_name
-          puts "#{pet.name} the #{pet.type} is in Pet Shop #{pet.pet_shop_id}"
-      nil
-        end
-      end
+      # sql = "SELECT * FROM pets"
+      # pet_data = runner.run( sql )
+      # pets = pet_data.map { |pet_data| Pet.new(pet_data, runner )}
+      # for pet in pets
+      # # binding.pry
+      #   if pet.name == pet_name
+      #     puts "#{pet.name} the #{pet.type} is in Pet Shop #{pet.pet_shop_id}"
+      # nil
+      #   end
+      sql = "SELECT * FROM pets WHERE pet_shop_id = #{@id}"
+      pets_data = @runner.run(sql)
+      pets = pets_data.map { |pet_data| Pet.new( pet_data, @runner) }
+      return pets
+      # end
   end
 
   def delete(id, runner)
