@@ -5,6 +5,7 @@ require_relative('../models/account')
 require_relative('../models/merchant')
 require_relative('../models/tag')
 require_relative('../models/transaction')
+require_relative('../models/result')
 
 account1_init = {
   'user_name' => 'brian',
@@ -32,7 +33,7 @@ transaction1_init = {
   'account_id' => '1',
   'merchant_id' => '1',
   'tag_id' => '1',
-  'amount' => '25',
+  'amount' => '25.26',
   'trans_date' => "'2016-07-01'",
   'description' => "'blah1'",
   'type' => "'cash'"
@@ -41,7 +42,7 @@ transaction2_init = {
   'account_id' => '1',
   'merchant_id' => '2',
   'tag_id' => '1',
-  'amount' => '50',
+  'amount' => '50.15',
   'trans_date' => "'2016-07-02'",
   'description' => "'blah2'",
   'type' => "'debit'"
@@ -50,7 +51,7 @@ transaction3_init = {
   'account_id' => '1',
   'merchant_id' => '1',
   'tag_id' => '2',
-  'amount' => '75',
+  'amount' => '75.56',
   'trans_date' => "'2016-06-30'",
   'description' => "'blah3'",
   'type' => "'cash'"
@@ -59,7 +60,7 @@ transaction4_init = {
   'account_id' => '2',
   'merchant_id' => '1',
   'tag_id' => '2',
-  'amount' => '100',
+  'amount' => '100.99',
   'trans_date' => "'2016-07-02'",
   'description' => "'blah4'",
   'type' => "'debit'"
@@ -69,10 +70,10 @@ trans_update = {
   'amount' => '500'
 }
 
-merch_update = {
-  'name' => 'overclockers', 
-  'id' => '1'
-}
+# merch_update = {
+#   'name' => 'overclockers', 
+#   'id' => '1'
+# }
 
 account1 = Account.new( account1_init )
 account2 = Account.new( account2_init )
@@ -93,12 +94,17 @@ trans1 = Transaction.new( transaction1_init )
 trans2 = Transaction.new( transaction2_init )
 trans3 = Transaction.new( transaction3_init )
 trans4 = Transaction.new( transaction4_init )
+# binding.pry
 trans1.save
+# binding.pry
 trans2.save
 trans3.save
 trans4.save
 
 binding.pry
+
+
+# select merchants.name, transactions.amount, transactions.trans_date FROM merchants INNER JOIN transactions ON transactions.merchant_id = merchants.id;
 
 # Transaction.by_tag(1)
 
