@@ -3,9 +3,15 @@ require ('sinatra/contrib/all')
 require ('pry-byebug')
 require_relative ('./models/transaction')
 require_relative ('./models/account')
+require_relative ('./models/merchant')
+require_relative ('./models/tag')
 
 
 get '/transaction/new' do
+@accounts = Account.all
+@tags = Tag.all
+@merchants = Merchant.all
+# binding.pry
 erb ( :'transactions/new' )
 end
 
@@ -16,7 +22,7 @@ get '/transaction' do
 end
 
 post '/transaction' do
-# binding.pry
+binding.pry
 @transaction = Transaction.new(params)
 @account = Account.find(@transaction.account_id)
 @account.balance -= @transaction.amount

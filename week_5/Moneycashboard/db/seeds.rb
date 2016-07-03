@@ -99,7 +99,7 @@ trans3 = Transaction.new( transaction3_init )
 trans4 = Transaction.new( transaction4_init )
 # binding.pry
 trans1.save
-binding.pry
+# binding.pry
 trans2.save
 trans3.save
 trans4.save

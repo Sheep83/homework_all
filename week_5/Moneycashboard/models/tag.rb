@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 
 class Tag
 
-  attr_reader( :name )
+  attr_reader( :name, :id )
 
   def initialize( options )
     @id = options['id'].to_i
@@ -22,6 +22,13 @@ class Tag
     results = results_array.map { |result| Result.new(result)}
     return results
   
+  end
+
+  def self.all
+    sql = "SELECT * FROM tags"
+    tags = run_sql(sql) 
+    result = tags.map { |tag| Tag.new(tag)}
+    return result  
   end
 
 
