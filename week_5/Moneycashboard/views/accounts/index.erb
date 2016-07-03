@@ -1,0 +1,9 @@
+<h2>All Accounts</h2>
+
+<a href="/account/new">Add new account</a><br>
+
+<% @accounts.each do |account| %>
+  ID: <%= account.id %><br>
+  Type: <%= account.type %> - Balance: <%= account.balance %><br>
+  <hr>
+<% end %>

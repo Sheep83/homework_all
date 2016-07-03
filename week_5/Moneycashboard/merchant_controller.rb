@@ -23,14 +23,13 @@ get '/merchant' do
   erb ( :'merchants/index' )
 end
 
-get '/merchant/:id' do ####find specific merchant by id
+get '/merchant/:id' do 
   @merchant = Merchant.find(params[:id])
   # binding.pry
   erb ( :'merchants/show' )
 end
 
 get'/merchant/:id/edit' do
-
 @merchant = Merchant.find(params[:id])
 erb (:'merchants/edit')
 

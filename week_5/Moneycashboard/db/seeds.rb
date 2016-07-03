@@ -8,12 +8,10 @@ require_relative('../models/transaction')
 require_relative('../models/result')
 
 account1_init = {
-  'user_name' => 'brian',
   'type' => 'current',
   'balance' => '94.26'
 }
 account2_init = {
-  'user_name' => 'brian',
   'type' => 'savings',
   'balance' => '1000',
 }

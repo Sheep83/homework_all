@@ -3,19 +3,18 @@ require_relative('../db/sql_runner')
 
 class Account
 
-  attr_reader( :name, :balance)
+  attr_reader( :id, :user_name, :balance, :type)
 
   def initialize( options )
     @id = options['id'].to_i
-    @user_name = options['user_name']
     @type = options['type']
     @balance = options['balance'].to_f
   end
 
   def save()
-    sql = "INSERT INTO accounts (user_name, type, balance) VALUES ('#{@user_name}', '#{@type}', '#{@balance}') RETURNING *"
-    trans_data = run_sql(sql)
-    @id = trans_data.first['id'].to_i
+    sql = "INSERT INTO accounts (type, balance) VALUES ('#{@type}', '#{@balance}') RETURNING *"
+    acc_data = run_sql(sql)
+    @id = acc_data.first['id'].to_i
   end
 
   def self.all

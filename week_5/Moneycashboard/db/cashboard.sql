@@ -15,7 +15,6 @@ CREATE TABLE tags (
 
 CREATE TABLE accounts (
   id serial4 primary key,
-  user_name VARCHAR(255),
   type VARCHAR(255),
   balance numeric(10,2)
   );
