@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>
-    
-  Mon£yCa$hBoard
-  </title>
 
-  <header>Mon£yCa$hBoard</header>
-  </br>
+<link rel="stylesheet" href="style.css">
+  
+  <title>
+    Mon£yCa$hBoard
+  </title>
+  <div class = "title">
+  <header>Mon£yCa$hBoard</header></br>
   <hr>
+  </div>
 </head>
 
 <body>
+
+<ul class="topnav">
+  <li><a href="/home">Home</a></li>
+  <li><a href="/merchant">Merchants</a></li>
+  <li><a href="/account">Accounts</a></li>
+  <li><a href="/transaction">Transactions</a></li>
+</ul>
+
+<!-- <a href="/home">Home</a>
 <a href="/merchant">Merchants</a>
 <a href="/account">Accounts</a>
-<a href="/transactions">Transactions</a>
+<a href="/transactions">Transactions</a> -->
+
 <%= yield %>
 </body>
 </html>
+
