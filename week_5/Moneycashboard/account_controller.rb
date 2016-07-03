@@ -7,6 +7,27 @@ get '/account/new' do
 erb ( :'accounts/new' )
 end
 
+get '/account/transfer' do
+  @accounts = Account.all()
+  # binding.pry
+  erb ( :'transfers/new' )
+end
+
+post '/account/transfer' do
+# @account = Account.new(params)
+# # binding.pry
+# @account.save()
+# binding.pry
+@account1 = Account.find(params[:account1])
+@account2 = Account.find(params[:account2])
+@account1.balance -= params[:amount].to_f
+@account2.balance += params[:amount].to_f
+@account1.update
+@account2.update
+# binding.pry
+erb ( :'/transfers/create' )
+end
+
 get '/account' do
   @accounts = Account.all()
   # binding.pry

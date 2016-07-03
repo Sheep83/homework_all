@@ -59,10 +59,9 @@ class Account
     run_sql(sql)
   end
 
-  # def reduce_balance(amount)
-  #   @balance = @balance - amount
-  #   return @balance
-  # end
+  # def transfer(amount)
+  #   sql =
+
 
 
 end
