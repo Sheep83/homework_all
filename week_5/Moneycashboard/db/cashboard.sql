@@ -10,7 +10,7 @@ CREATE TABLE merchants (
 
 CREATE TABLE tags (
   id serial4 primary key,
-  type VARCHAR(255)
+  name VARCHAR(255)
   );
 
 CREATE TABLE accounts (
@@ -25,9 +25,9 @@ CREATE TABLE transactions (
   merchant_id INT8 references merchants(id),
   tag_id INT8 references tags(id),
   amount numeric(10,2),
-  trans_date Date,
-  description VARCHAR(255),
-  type VARCHAR(255)
+  trans_date Date
+  -- description VARCHAR(255),
+  -- type VARCHAR(255)
 );
 
 

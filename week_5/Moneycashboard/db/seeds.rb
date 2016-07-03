@@ -9,11 +9,11 @@ require_relative('../models/result')
 
 account1_init = {
   'type' => 'current',
-  'balance' => '94.26'
+  'balance' => 94.26
 }
 account2_init = {
   'type' => 'savings',
-  'balance' => '1000',
+  'balance' => 1000,
 }
 merchant1_init = {
   'name' => 'Amazon'
@@ -22,46 +22,46 @@ merchant2_init = {
   'name' => 'eBay'
 }
 tag1_init = {
-  'type' => 'dvd'
+  'name' => 'dvd'
 }
 tag2_init = {
-  'type' => 'star wars'
+  'name' => 'star wars'
 }
 transaction1_init = {
-  'account_id' => '1',
-  'merchant_id' => '1',
-  'tag_id' => '1',
-  'amount' => '25.26',
-  'trans_date' => "'2016-07-01'",
-  'description' => "'blah1'",
-  'type' => "'cash'"
+  'account_id' => 1,
+  'merchant_id' => 1,
+  'tag_id' => 1,
+  'amount' => 25.26,
+  # 'trans_date' => "'2016-07-01'"
+  # 'description' => "'blah1'",
+  # 'type' => "'cash'"
 }
 transaction2_init = {
-  'account_id' => '1',
-  'merchant_id' => '2',
-  'tag_id' => '1',
-  'amount' => '50.15',
-  'trans_date' => "'2016-07-02'",
-  'description' => "'blah2'",
-  'type' => "'debit'"
+  'account_id' => 1,
+  'merchant_id' => 2,
+  'tag_id' => 1,
+  'amount' => 50.15,
+  # 'trans_date' => "'2016-07-02'"
+  # 'description' => "'blah2'",
+  # 'type' => "'debit'"
 }
 transaction3_init = {
-  'account_id' => '1',
-  'merchant_id' => '1',
-  'tag_id' => '2',
-  'amount' => '75.56',
-  'trans_date' => "'2016-06-30'",
-  'description' => "'blah3'",
-  'type' => "'cash'"
+  'account_id' => 1,
+  'merchant_id' => 1,
+  'tag_id' => 2,
+  'amount' => 75.56,
+  # 'trans_date' => "'2016-06-30'"
+  # 'description' => "'blah3'",
+  # 'type' => 'cash'
 }
 transaction4_init = {
-  'account_id' => '2',
-  'merchant_id' => '1',
-  'tag_id' => '2',
-  'amount' => '100.99',
-  'trans_date' => "'2016-07-02'",
-  'description' => "'blah4'",
-  'type' => "'debit'"
+  'account_id' => 2,
+  'merchant_id' => 1,
+  'tag_id' => 2,
+  'amount' => 100.99,
+  # 'trans_date' => "'2016-07-02'"
+  # 'description' => "'blah4'",
+  # 'type' => 'debit'
 }
 trans_update = {
   'id' => '1',
@@ -94,12 +94,12 @@ trans3 = Transaction.new( transaction3_init )
 trans4 = Transaction.new( transaction4_init )
 # binding.pry
 trans1.save
-# binding.pry
+binding.pry
 trans2.save
 trans3.save
 trans4.save
 
-binding.pry
+# binding.pry
 
 
 # select merchants.name, transactions.amount, transactions.trans_date FROM merchants INNER JOIN transactions ON transactions.merchant_id = merchants.id;

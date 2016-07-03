@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 
 class Transaction
 
-  attr_reader( :merchant_id, :tag_id, :amount, :trans_date, :description, :type )
+  attr_reader( :id, :account_id, :merchant_id, :tag_id, :amount, :trans_date, :description, :type )
 
   def initialize( options )
     @id = options['id'].to_i
@@ -11,9 +11,9 @@ class Transaction
     @merchant_id = options['merchant_id'].to_i
     @tag_id = options['tag_id'].to_i
     @amount = options['amount'].to_f
-    @trans_date = options['trans_date']
-    @description = options['description'].to_s
-    @type = options['type'].to_s
+    # @trans_date = options['trans_date']
+    # @description = options['description'].to_s
+    # @type = options['type'].to_s
   end
 
   def self.all
@@ -49,7 +49,7 @@ class Transaction
   end
 
   def save()
-    sql = "INSERT INTO transactions (account_id, merchant_id, tag_id, amount, trans_date, description, type) VALUES ('#{@account_id}', '#{@merchant_id}', '#{@tag_id}', #{@amount}, #{@trans_date}, #{@description}, #{@type}) RETURNING *"
+    sql = "INSERT INTO transactions (account_id, merchant_id, tag_id, amount) VALUES (#{@account_id}, #{@merchant_id}, #{@tag_id}, #{@amount}) RETURNING *"
     trans_data = run_sql(sql)
     @id = trans_data.first['id'].to_i
   end

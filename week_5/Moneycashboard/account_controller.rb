@@ -36,7 +36,7 @@ erb (:'accounts/edit')
 end
 
 post'/account/:id' do 
-  @maccount = Account.update(params)
+  @account = Account.update(params)
   redirect to("/account/#{params[:id]}")
 
 end

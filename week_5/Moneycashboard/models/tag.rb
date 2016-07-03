@@ -7,11 +7,11 @@ class Tag
 
   def initialize( options )
     @id = options['id'].to_i
-    @type = options['type']
+    @name = options['name']
   end
 
   def save()
-    sql = "INSERT INTO tags (type) VALUES ('#{@type}') RETURNING *"
+    sql = "INSERT INTO tags (name) VALUES ('#{@name}') RETURNING *"
     tag_data = run_sql(sql)
     @id = tag_data.first['id'].to_i
   end
