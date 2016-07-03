@@ -2,6 +2,8 @@ require ('sinatra')
 require ('sinatra/contrib/all')
 require ('pry-byebug')
 require_relative ('./models/transaction')
+require_relative ('./models/account')
+
 
 get '/transaction/new' do
 erb ( :'transactions/new' )
@@ -16,8 +18,11 @@ end
 post '/transaction' do
 # binding.pry
 @transaction = Transaction.new(params)
-binding.pry
+@account = Account.find(@transaction.account_id)
+@account.balance -= @transaction.amount
+# binding.pry
 @transaction.save()
+@account.update()
 # binding.pry
 erb ( :'transactions/create' )
 end

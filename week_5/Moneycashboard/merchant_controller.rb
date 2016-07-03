@@ -13,7 +13,7 @@ post '/merchant' do
 # binding.pry
   #save to db
 @merchant.save()
-binding.pry
+# binding.pry
 erb ( :'merchants/create' )
 
 end

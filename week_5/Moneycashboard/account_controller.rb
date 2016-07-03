@@ -14,7 +14,7 @@ get '/account' do
 end
 
 post '/account' do
-binding.pry
+# binding.pry
 @account = Account.new(params)
 # binding.pry
 @account.save()

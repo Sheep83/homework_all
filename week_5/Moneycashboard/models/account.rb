@@ -4,6 +4,7 @@ require_relative('../db/sql_runner')
 class Account
 
   attr_reader( :id, :user_name, :balance, :type)
+  attr_accessor( :balance )
 
   def initialize( options )
     @id = options['id'].to_i
@@ -49,5 +50,19 @@ class Account
     result = run_sql(sql)
     return result
   end
+
+  def update()
+    sql = "UPDATE accounts SET 
+    type='#{@type}',
+    balance='#{@balance}'
+    WHERE id = '#{@id}'"
+    run_sql(sql)
+  end
+
+  # def reduce_balance(amount)
+  #   @balance = @balance - amount
+  #   return @balance
+  # end
+
 
 end

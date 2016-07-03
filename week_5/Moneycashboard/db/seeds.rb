@@ -68,6 +68,11 @@ trans_update = {
   'amount' => '500'
 }
 
+balance_update = {
+  'id' => 1,
+  'amount' => '500'
+}
+
 # merch_update = {
 #   'name' => 'overclockers', 
 #   'id' => '1'
