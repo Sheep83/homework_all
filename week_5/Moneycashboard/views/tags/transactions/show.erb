@@ -1,0 +1,10 @@
+<h2>All Transactions for tag <%=@tag.name%></h2>
+
+<% binding.pry %>
+<% @transactions.each do |transaction| %>
+  Tag: <%= transaction['name'] %><br>
+  Amount: £ <%= transaction['amount'] %><br>
+  <hr>
+<% end %>
+
+<a href="/tag/<%=@tag.id%>/transactions">View Transactions</a>

@@ -48,7 +48,7 @@ class Merchant
   end
 
   def transactions
-    sql = "SELECT transactions.trans_date, merchants.name, transactions.amount, transactions.type, transactions.description FROM merchants INNER JOIN transactions ON transactions.merchant_id = merchants.id WHERE merchants.id = #{@id}"
+    sql = "SELECT merchants.name, transactions.amount FROM merchants INNER JOIN transactions ON transactions.merchant_id = merchants.id WHERE transactions.merchant_id = #{@id}"
     results_array = run_sql(sql)
     results = results_array.map { |result| Result.new(result)}
     return results

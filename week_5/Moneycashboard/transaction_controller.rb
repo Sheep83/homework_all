@@ -29,7 +29,7 @@ binding.pry
 # binding.pry
 @transaction.save()
 @account.update()
-# binding.pry
+binding.pry
 erb ( :'transactions/create' )
 end
 

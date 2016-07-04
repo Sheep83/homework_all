@@ -17,11 +17,16 @@ class Tag
   end
 
   def transactions
-    sql = "SELECT transactions.trans_date, tags.name, transactions.amount, transactions.type, transactions.description FROM tags INNER JOIN transactions ON transactions.tag_id = tags.id WHERE tags.id = #{@id}"
-    results_array = run_sql(sql)
-    results = results_array.map { |result| Result.new(result)}
+    sql = "SELECT tags.name, transactions.amount FROM tags INNER JOIN transactions ON transactions.tag_id = tags.id WHERE tags.id = #{@id}"
+    results = run_sql(sql)
     return results
-  
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM tags WHERE id=#{id}"
+    tag = run_sql(sql)
+    result = Tag.new(tag.first)
+    return result
   end
 
   def self.all
