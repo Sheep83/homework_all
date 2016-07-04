@@ -13,6 +13,15 @@ get '/account/transfer' do
   erb ( :'transfers/new' )
 end
 
+get '/account/:id/transactions' do
+@account = Account.find(params[:id])
+@accounts = @account.transactions
+options = @accounts.to_a
+@total = @account.total(options)
+# binding.pry
+erb (:'accounts/transactions/show')
+
+end
 post '/account/transfer' do
 # @account = Account.new(params)
 # # binding.pry

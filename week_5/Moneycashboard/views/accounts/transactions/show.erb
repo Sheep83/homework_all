@@ -1,0 +1,14 @@
+<h2>All Transactions for account <%=@account.type%></h2>
+
+
+<% @accounts.each do |account| %>
+  Account Type: <%= account['type'] %><br>
+  Amount: £ <%= account['amount'] %><br>
+
+
+  <hr>
+<% end %>
+Total: £ <%=@total%><br>
+<hr>
+
+<a href="/account/<%=@account.id%>/transactions">View Transactions</a>
