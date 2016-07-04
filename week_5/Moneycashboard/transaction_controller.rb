@@ -36,19 +36,17 @@ get '/transaction/:id' do
 end
 
 get'/transaction/:id/edit' do
-
 @transaction = Transaction.find(params[:id])
 erb (:'transactions/edit')
-
 end
 
 post'/transaction/:id' do 
   @transaction = Account.update(params)
   redirect to("/transaction/#{params[:id]}")
-
 end
 
-post '/transaction/:id/delete' do
+get '/transaction/:id/delete' do
+  # binding.pry
   Transaction.delete( params[:id])
   redirect to('/transaction')
 end

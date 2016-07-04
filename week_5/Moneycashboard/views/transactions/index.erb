@@ -11,10 +11,13 @@
 <% @transactions.each do |transaction| %>
 Account Type : <%= transaction['type'] %><br>
 Merchant : <%= transaction['name'] %><br>
-Amount: £ <%= transaction['amount'] %>
+Amount: £ <%= transaction['amount'] %><br>
+<form>
+    <button formaction="/transaction/<%=transaction['id']%>">View</button>
+</form><br>
 <hr>
 <% end %>
 
-Total : £ <%= @total %>
+Total : £ <%= @total.to_f %>
 
 
