@@ -1,12 +1,29 @@
-<h2>Add Account</h2>
+<h2>Balance Transfer</h2>
 
 <form action="/account/transfer" method="post">
+<label for="account1">Select an Account to debit :</label>
+<select name = "account1">
+  <% @accounts.each do |account| %>
+  <option value="<%= account.id %>"><%= account.type %></option>
+  <% end %>
+</select>
+<hr>
+<label for="account2">Select an Account to credit :</label>
+<select name = "account2">
+  <% @accounts.each do |account| %>
+  <option value="<%= account.id %>"><%= account.type %></option>
+  <% end %>
+</select>
+<hr>
 
-  <label for="account1">A/C ID to debit:</label>
+
+
+
+ <!--  <label for="account1">A/C ID to debit:</label>
   <input type="number" name="account1"><br>
 
   <label for="account2">A/C ID to credit:</label>
-  <input type="number" name="account2"><br>
+  <input type="number" name="account2"><br> -->
 
   <label for="amount">Amount to transfer: £</label>
   <input type="decimal" name="amount"><br>

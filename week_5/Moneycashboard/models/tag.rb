@@ -27,7 +27,7 @@ class Tag
     # binding.pry
     options.each do |transaction|
       total += transaction['amount'].to_f
-      binding.pry
+      # binding.pry
     end
     return total
   end

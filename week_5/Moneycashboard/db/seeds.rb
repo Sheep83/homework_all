@@ -8,11 +8,11 @@ require_relative('../models/transaction')
 require_relative('../models/result')
 
 account1_init = {
-  'type' => 'current',
+  'type' => 'Current Account',
   'balance' => 94.26
 }
 account2_init = {
-  'type' => 'savings',
+  'type' => 'Savings Account',
   'balance' => 1000,
 }
 merchant1_init = {
@@ -22,10 +22,10 @@ merchant2_init = {
   'name' => 'eBay'
 }
 tag1_init = {
-  'name' => 'dvd'
+  'name' => 'Entertainment'
 }
 tag2_init = {
-  'name' => 'star wars'
+  'name' => 'Vintage Star Wars'
 }
 transaction1_init = {
   'account_id' => 1,
