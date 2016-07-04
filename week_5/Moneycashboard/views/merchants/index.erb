@@ -1,7 +1,18 @@
-<h2>All Merchants</h2>
 
-<a href="/merchant/new">Add new merchant</a><br>
+<div id="subhead">
+<h2>All Merchants</h2>
+</div>
+
+<div id="hmenu">
+  <ul>
+    <li><a href="/merchant/new">Add new merchant</a></li>
+  </ul>
+</div>
+
+
+
 
 <% @merchants.each do |merchant| %>
-  ID: <%= merchant.id %> - Name: <%= merchant.name %><br>
+Name: <%= merchant.name %><br>
+<hr>
 <% end %>

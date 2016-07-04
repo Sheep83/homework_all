@@ -1,14 +1,18 @@
-
+<div id="subhead">
 <h2>All Transactions</h2>
+</div>
 
-<a href="/transaction/new">Add new transaction</a><br>
+<div id="hmenu">
+  <ul>
+    <li><a href="/transaction/new">Add new transaction</a></li>
+  </ul>
+</div>
 
 <% @transactions.each do |transaction| %>
-  Account Type: <%= transaction['type'] %> - Merchant <%= transaction['name'] %><br>
-  
-  Amount: <%= transaction['amount'] %>
-  <hr>
+Account Type : <%= transaction['type'] %><br>
+Merchant : <%= transaction['name'] %><br>
+Amount: £ <%= transaction['amount'] %>
+<hr>
 <% end %>
 
-<!-- SELECT accounts.type, transactions.amount, merchants.name FROM accounts INNER JOIN transactions ON accounts.id = transactions.account_id INNER JOIN merchants ON merchants.id = transactions.merchant_id WHERE transactions.merchant_id = #{@id}
- -->
+

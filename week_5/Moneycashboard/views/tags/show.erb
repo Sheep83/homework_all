@@ -2,4 +2,7 @@
 
 <p>Tag Name: <%= @tag.name %><br></p>
 
-<a href="/tag/<%=@tag.id%>/transactions">View Transactions</a>
+<form>
+    <button formaction="/tag/<%=@tag.id%>/transactions">Transactions</button>
+</form><br>
+<!-- <a href="/tag/<%=@tag.id%>/transactions">View Transactions</a> -->

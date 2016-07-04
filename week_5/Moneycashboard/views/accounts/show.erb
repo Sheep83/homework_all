@@ -1,7 +1,9 @@
-<p>Account ID: <%= @account.id %></p>
+
 
 <p>Type: <%= @account.type %><br></p>
 
 <p>Balance: <%= @account.balance.to_f %><br></p>
-
-<a href="/account/<%=@account.id%>/transactions">View Transactions</a>
+<form>
+    <button formaction="/account/<%=@account.id%>/transactions">Transactions</button>
+</form><br>
+<!-- <a href="/account/<%=@account.id%>/transactions">View Transactions</a> -->

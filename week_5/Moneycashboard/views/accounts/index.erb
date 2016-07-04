@@ -1,12 +1,24 @@
+<div id="subhead">
 <h2>All Accounts</h2>
+</div>
 
-<a href="/account/new">Add new account</a><br>
 
-<a href="/account/transfer">Balance Transfer</a><br>
+<div id="hmenu">
+<ul>
+  <li><a href="/account/new">Add new account</a></li>
+  <li><a href="/account/transfer">Balance Transfer</a></li>
+</ul>
+</div>
+
 
 <% @accounts.each do |account| %>
-  ID: <%= account.id %><br>
-  Type: <%= account.type %> - Balance: <%= account.balance %><br>
-  <a href="/account/<%=account.id%>">View</a><br>
+  Type: <%= account.type %><br>
+  Balance: £ <%= account.balance.to_f %><br>
+
+  <form>
+      <button formaction="/account/<%=account.id%>">View</button>
+  </form>
   <hr>
+  <!-- <a href="/account/<%=account.id%>">View</a><br>
+  <hr> -->
 <% end %>
