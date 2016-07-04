@@ -22,6 +22,17 @@ class Tag
     return results
   end
 
+  def total(options)
+    total = 0
+    # binding.pry
+    options.each do |transaction|
+      total += transaction['amount'].to_f
+      binding.pry
+    end
+    return total
+  end
+
+
   def self.find(id)
     sql = "SELECT * FROM tags WHERE id=#{id}"
     tag = run_sql(sql)

@@ -37,6 +37,8 @@ end
 get'/tag/:id/transactions' do
 @tag = Tag.find(params[:id])
 @transactions = @tag.transactions
+options = @transactions.to_a# binding.pry
+@total = @tag.total(options)
 # binding.pry
 erb (:'tags/transactions/show')
 

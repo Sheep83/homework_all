@@ -22,14 +22,13 @@ get '/transaction' do
 end
 
 post '/transaction' do
-binding.pry
+# binding.pry
 @transaction = Transaction.new(params)
 @account = Account.find(@transaction.account_id)
 @account.balance -= @transaction.amount
-# binding.pry
 @transaction.save()
 @account.update()
-binding.pry
+# binding.pry
 erb ( :'transactions/create' )
 end
 
