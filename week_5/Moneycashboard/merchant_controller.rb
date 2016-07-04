@@ -46,6 +46,15 @@ post '/merchant/:id/delete' do
   redirect to('/merchant')
 end
 
+get'/merchant/:id/transactions' do
+@merchant = Merchant.find(params[:id])
+@transactions = @merchant.transactions
+options = @transactions.to_a
+@total = @merchant.total(options)
+erb (:'merchants/transactions/show')
+
+end
+
 
 
 

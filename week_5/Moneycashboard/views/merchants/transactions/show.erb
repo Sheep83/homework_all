@@ -1,0 +1,14 @@
+<h2>All Transactions for merchant <%=@merchant.name%></h2>
+
+
+<% @transactions.each do |transaction| %>
+  Merchant Account : <%= transaction['name'] %><br>
+  Amount: £ <%= transaction['amount'] %><br>
+
+
+  <hr>
+<% end %>
+Total: £ <%=@total%><br>
+<hr>
+
+<a href="/merchant/<%=@merchant.id%>/transactions">View Transactions</a>

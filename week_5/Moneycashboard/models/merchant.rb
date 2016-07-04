@@ -49,9 +49,16 @@ class Merchant
 
   def transactions
     sql = "SELECT merchants.name, transactions.amount FROM merchants INNER JOIN transactions ON transactions.merchant_id = merchants.id WHERE transactions.merchant_id = #{@id}"
-    results_array = run_sql(sql)
-    results = results_array.map { |result| Result.new(result)}
-    return results
+    result = run_sql(sql)
+    return result
+  end
+
+  def total(options)
+    total = 0
+    options.each do |transaction|
+      total += transaction['amount'].to_f
+    end
+    return total
   end
 
 

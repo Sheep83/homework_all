@@ -69,9 +69,4 @@ class Account
     return total
   end
 
-  # def transfer(amount)
-  #   sql =
-
-
-
 end

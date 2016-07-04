@@ -14,5 +14,10 @@
 
 <% @merchants.each do |merchant| %>
 Name: <%= merchant.name %><br>
+
+<form>
+    <button formaction="/merchant/<%=merchant.id%>">View</button>
+</form>
 <hr>
+
 <% end %>

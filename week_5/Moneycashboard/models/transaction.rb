@@ -52,8 +52,15 @@ class Transaction
     return result  
   end
 
-  def total()
-    return @amount
+  def self.total()
+    @total = 0
+    sql = "SELECT * FROM transactions"
+    transactions = run_sql(sql)
+    # binding.pry
+    transactions.each do |transaction|
+      @total += transaction['amount'].to_f
+    end
+    return @total.to_f
   end
 
   def save()

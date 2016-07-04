@@ -36,6 +36,10 @@ p  {
 #subhead {
   padding: 2px;
   background-image: url('/cash_bg.jpg');
+  
+}
+#bg_wrapper {
+  /*background-image: url('/paper.jpg');*/
 
 }
 h2 {

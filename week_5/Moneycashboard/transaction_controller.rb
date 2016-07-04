@@ -11,30 +11,27 @@ get '/transaction/new' do
 @accounts = Account.all
 @tags = Tag.all
 @merchants = Merchant.all
-# binding.pry
 erb ( :'transactions/new' )
 end
 
 get '/transaction' do
   @transactions = Transaction.all_pretty()
-  # binding.pry
+  options = @transactions.to_a
+  @total = Transaction.total
   erb ( :'transactions/index' )
 end
 
 post '/transaction' do
-# binding.pry
 @transaction = Transaction.new(params)
 @account = Account.find(@transaction.account_id)
 @account.balance -= @transaction.amount
 @transaction.save()
 @account.update()
-# binding.pry
 erb ( :'transactions/create' )
 end
 
 get '/transaction/:id' do 
   @transaction = Transaction.find(params[:id])
-  # binding.pry
   erb ( :'transactions/show' )
 end
 
