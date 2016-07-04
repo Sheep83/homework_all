@@ -2,29 +2,48 @@
 <html>
 <head>
 
-<link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/style.css">
   <title>
     Mon£yCa$hBoard
   </title>
-  
-  <div class = "title">
-  <center><header>Mon£yCa$hBoard</header><center>
-  </div>
+    <div class = "title">
+      <center><h4>Mon£yCa$hBoard</h4><center>
+    </div>
+
 
 </head>
 
 <body>
-<div class = "navbar">
-<ul>
-  <li><a href="/home">Home</a></li>
-  <li><a href="/merchant">Merchants</a></li>
-  <li><a href="/account">Accounts</a></li>
-  <li><a href="/transaction">Transactions</a></li>
-  <li><a href="/tag">Tags</a></li>
-</ul>
-</div>
+    
+  
+  <!-- <div id="sidebar"><p></div>
 
-<%= yield %>
+  <div id="container"><%= yield %></div>
+ -->
+
+
+  <div class="container">
+     <div class="left">
+     <div class = "navbar">
+       <ul>
+         <li><a href="/home">Home</a></li>
+         <li><a href="/merchant">Merchants</a></li>
+         <li><a href="/account">Accounts</a></li>
+         <li><a href="/transaction">Transactions</a></li>
+         <li><a href="/tag">Tags</a></li>
+       </ul>
+     </div>
+     </div>
+     <div class="center"><%= yield %></div>
+     <div class="right"></div>
+  </div>
+
+  <div id="footer"><center>Copyright 2016</center></div>
+  
+
+
+
+
 </body>
 </html>
 

@@ -23,6 +23,14 @@ class Transaction
     return result  
   end
 
+  def self.all_pretty
+    sql = "SELECT accounts.type, transactions.amount, merchants.name FROM accounts INNER JOIN transactions ON accounts.id = transactions.account_id INNER JOIN merchants ON transactions.merchant_id = merchants.id WHERE merchants.id = transactions.merchant_id"
+    @transactions = run_sql(sql)
+    # binding.pry
+    return @transactions
+    nil
+  end
+
   def self.by_account(id)
     sql = "SELECT * FROM transactions WHERE account_id=#{id}"
     transactions = run_sql(sql) 

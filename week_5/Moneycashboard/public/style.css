@@ -17,27 +17,77 @@ a {
     /*display: block;*/
     /*padding: 2px;*/
     background-color: #99ff99;
-}
 
-li {
+}
+a:hover { 
+    text-decoration: underline;
+    /*background-color: yellow;*/
+}
+a:link {
+    text-decoration: none;
+    color: #000000;
+
+}
+a:visited {
+    text-decoration: none;
+    color: #000000;
+
+}
+/*a:active {
+    text-decoration: underline;
+}*/
+
+/*li {*/
     /*position 0*/
     /*float: left;*/
-    display: inline-block;
-}
+    /*display: inline-block;*/
+
+/*}*/
 
 .title{
-
+  border: 2px solid;
+  border-radius: 25px;
   padding: 5px;
   background-color: #99ff99;
   font-family: sans-serif;
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .navbar{
   /*padding: 2px;*/
-  width: 100%
-  float: left;
+  border: 1px solid;
+  /*border-radius: 20px;*/
+ /* width: 100%;*/
+  /*float: left;*/
   background-color: #99ff99;
 
 }
+/*#container {
+  float: right;
+  width: 70%;
+  margin: 0 auto;
+}
 
+#sidebar {
+  background-color: #99ff99;
+  width: 30%;
+  float: left;
+}
+#right {
+  background-color: #99ff99;
+  width: 20%;
+  height: inherit;
+  float: left;
+}*/
+#footer {
+  border: 1px solid;
+  background-color: #99ff99;
+  width: 100%;
+  height: auto;
+  float: left;
+  clear: both;
+}
+.left{ float: left; width: 20%; background-color: #99ff99; height: auto; }
+.right{ float: right; width: 20%; }
+.center{ border: 1px solid; padding-left: 5px; display: inline-block; width: 60%; }
+.container{width: 100%; background-color: #99ff99;}

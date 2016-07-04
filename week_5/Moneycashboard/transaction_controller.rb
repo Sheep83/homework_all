@@ -16,7 +16,7 @@ erb ( :'transactions/new' )
 end
 
 get '/transaction' do
-  @transactions = Transaction.all()
+  @transactions = Transaction.all_pretty()
   # binding.pry
   erb ( :'transactions/index' )
 end

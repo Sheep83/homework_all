@@ -1,11 +1,14 @@
+
 <h2>All Transactions</h2>
 
 <a href="/transaction/new">Add new transaction</a><br>
 
 <% @transactions.each do |transaction| %>
-  ID: <%= transaction.id %> - Account ID: <%= transaction.account_id %><br>
-  Merchant ID: <%= transaction.merchant_id %> - Tag ID: <%= transaction.tag_id %><br>
-  Amount: <%= transaction.amount %> <!-- - Date: <%= transaction.trans_date %><br>
-  Description: <%= transaction.description %> - Type: <%= transaction.type %> --><br>
+  Account Type: <%= transaction['type'] %> - Merchant <%= transaction['name'] %><br>
+  
+  Amount: <%= transaction['amount'] %>
   <hr>
 <% end %>
+
+<!-- SELECT accounts.type, transactions.amount, merchants.name FROM accounts INNER JOIN transactions ON accounts.id = transactions.account_id INNER JOIN merchants ON merchants.id = transactions.merchant_id WHERE transactions.merchant_id = #{@id}
+ -->
