@@ -1,6 +1,4 @@
 
-
-
 header  {
   padding-bottom: 5px;
 }
@@ -25,23 +23,18 @@ p  {
   line-height: 26.4px;
   text-shadow: 2px 2px #29293d;
 }
-/*h1 {
-  font-family: "Brush Script MT", cursive;
-  font-size: 24px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 500;
-  line-height: 26.4px;
-}*/
+
 #subhead {
   padding: 2px;
-  background-image: url('/cash_bg.jpg');
-  
+  background-image: url('/cash_bg.jpg');  
 }
-#bg_wrapper {
-  /*background-image: url('/paper.jpg');*/
 
+#bg_wrapper {
+  background-image: url('/dark-leather.png');
+  background-attachment: fixed;
+  padding-bottom: 2px;
 }
+
 h2 {
   font-family: Copperplate, "Copperplate Gothic Light", fantasy;
   font-size: 32px;
@@ -60,7 +53,6 @@ div#hmenu {
    width: 100%; 
    text-align: center; 
   font-family: Helvetica;
-
 } 
 
 div#hmenu ul { 
@@ -112,15 +104,6 @@ div#hmenu ul a:hover{
    background-color: #227755; 
 }
 
-/*#navbar{*/
-  /*padding: 2px;*/
-  /*border: 1px solid;*/
-  /*border-radius: 20px;*/
-  /*width: 800px;*/
-  /*float: left;*/
-  /*background-color: #99ff99;
-}*/
-
 #footer {
   border: 1px solid;
   border-radius: 25px;
@@ -130,6 +113,12 @@ div#hmenu ul a:hover{
   float: left;
   clear: both;
 }
+
+div#total {
+  font-family: Helvetica;
+  font-size: 20px; 
+}
+
 /*.left{ float: left; width: 20%; background-color: #99ff99; height: auto; }
 .right{ float: right; width: 20%; }
 .center{ border: 1px solid; padding-left: 5px; display: inline-block; width: 60%; }

@@ -14,10 +14,13 @@ Merchant : <%= transaction['name'] %><br>
 Amount: £ <%= transaction['amount'] %><br>
 <form>
     <button formaction="/transaction/<%=transaction['id']%>">View</button>
+</form> <form>
+    <button formaction="/transaction/<%=transaction['id']%>/delete">Delete</button>
 </form><br>
 <hr>
 <% end %>
-
+<div id="total">
 Total : £ <%= @total.to_f %>
+</div>
 
 

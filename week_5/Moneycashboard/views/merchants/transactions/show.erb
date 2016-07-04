@@ -4,11 +4,11 @@
 <% @transactions.each do |transaction| %>
   Merchant Account : <%= transaction['name'] %><br>
   Amount: £ <%= transaction['amount'] %><br>
-
-
   <hr>
 <% end %>
+<div id="total">
 Total: £ <%=@total%><br>
+</div>
 <hr>
 
 <a href="/merchant/<%=@merchant.id%>/transactions">View Transactions</a>
