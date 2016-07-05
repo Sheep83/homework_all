@@ -1,13 +1,14 @@
 <h2>All Transactions for account <%=@account.type%></h2>
 
-
+<div id="results">
 <% @accounts.each do |account| %>
   Account Type: <%= account['type'] %><br>
   Amount: £ <%= account['amount'] %><br>
   <hr>
 <% end %>
+</div>
 <div id="total">
 Total: £ <%=@total%><br>
 </div>
 
-<a href="/account/<%=@account.id%>/transactions">View Transactions</a>
+<a href="/account/<%=@account.id%>/transactions">Back</a>

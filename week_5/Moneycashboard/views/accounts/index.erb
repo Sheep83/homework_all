@@ -10,15 +10,13 @@
 </ul>
 </div>
 
-
+<div id="results">
 <% @accounts.each do |account| %>
   Type: <%= account.type %><br>
   Balance: £ <%= account.balance.to_f %><br>
-
   <form>
       <button formaction="/account/<%=account.id%>">View</button>
   </form>
   <hr>
-  <!-- <a href="/account/<%=account.id%>">View</a><br>
-  <hr> -->
 <% end %>
+</div>

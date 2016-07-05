@@ -1,11 +1,12 @@
 <h2>All Transactions for merchant <%=@merchant.name%></h2>
 
-
+<div id="results">
 <% @transactions.each do |transaction| %>
   Merchant Account : <%= transaction['name'] %><br>
   Amount: £ <%= transaction['amount'] %><br>
   <hr>
 <% end %>
+</div>
 <div id="total">
 Total: £ <%=@total%><br>
 </div>

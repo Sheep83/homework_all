@@ -1,13 +1,12 @@
 <h2>All Transactions for tag <%=@tag.name%></h2>
 
-
+<div id="results">
 <% @transactions.each do |transaction| %>
   Tag: <%= transaction['name'] %><br>
   Amount: £ <%= transaction['amount'] %><br>
-
-
   <hr>
 <% end %>
+</div>
 <div id="total">
 Total: £ <%=@total%><br>
 </div>

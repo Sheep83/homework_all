@@ -1,21 +1,21 @@
 <div id="subhead">
-<h2>All Transaction Tags</h2>
+  <h2>All Transaction Tags</h2>
 </div>
 
 <div id="hmenu">
-<ul>
-<li><a href="/tag/new">Add new tag</a></li>
-</ul>
+  <ul>
+    <li><a href="/tag/new">Add new tag</a></li>
+  </ul>
 </div>
-
-<% @tags.each do |tag| %>
+<div id="results">
+  <% @tags.each do |tag| %>
   ID: <%= tag.id %><br>
   Tag description: <%= tag.name %>
   <form>
-  <br>
-      <button formaction="/tag/<%=tag.id%>">View</button>
-  </form><br>
-  <!-- <a href="/tag/<%=tag.id%>">View</a><br> -->
+    <br>
+    <button formaction="/tag/<%=tag.id%>">View</button>
+  </form>
   <hr>
-<% end %>
+  <% end %>
+</div>
 

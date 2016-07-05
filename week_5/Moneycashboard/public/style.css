@@ -1,4 +1,9 @@
-
+body {
+  background-image: url('/dark-leather.png');
+  background-attachment: fixed;
+  background-color: #b3d1ff;
+  line-height: 1.5;
+}
 header  {
   padding-bottom: 5px;
 }
@@ -21,7 +26,7 @@ p  {
   font-variant: normal;
   font-weight: 500;
   line-height: 26.4px;
-  text-shadow: 2px 2px #29293d;
+  text-shadow: 2px 2px 3px #29293d;
 }
 
 #subhead {
@@ -29,11 +34,6 @@ p  {
   background-image: url('/cash_bg.jpg');  
 }
 
-#bg_wrapper {
-  background-image: url('/dark-leather.png');
-  background-attachment: fixed;
-  padding-bottom: 2px;
-}
 
 h2 {
   font-family: Copperplate, "Copperplate Gothic Light", fantasy;
@@ -115,9 +115,21 @@ div#hmenu ul a:hover{
 }
 
 div#total {
+  padding-top: 2px;
+  padding-bottom: 2px;
   font-family: Helvetica;
-  font-size: 20px; 
+  font-size: 20px;
+  padding-left: 20px;
+  clear: both;
+
 }
+
+div#results {
+  padding-top: 2px;
+  padding-left: 20px;
+  line-height: 1.5;
+}
+
 
 /*.left{ float: left; width: 20%; background-color: #99ff99; height: auto; }
 .right{ float: right; width: 20%; }

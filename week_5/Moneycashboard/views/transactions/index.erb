@@ -1,5 +1,5 @@
 <div id="subhead">
-<h2>All Transactions</h2>
+  <h2>All Transactions</h2>
 </div>
 
 <div id="hmenu">
@@ -8,19 +8,23 @@
   </ul>
 </div>
 
-<% @transactions.each do |transaction| %>
-Account Type : <%= transaction['type'] %><br>
-Merchant : <%= transaction['name'] %><br>
-Amount: £ <%= transaction['amount'] %><br>
-<form>
+<div id="results">
+  <% @transactions.each do |transaction| %>
+  Account Type : <%= transaction['type'] %><br>
+  Merchant : <%= transaction['name'] %><br>
+  Amount: £ <%= transaction['amount'] %><br>
+  <form>
     <button formaction="/transaction/<%=transaction['id']%>">View</button>
-</form> <form>
+  </form> 
+  <form>
     <button formaction="/transaction/<%=transaction['id']%>/delete">Delete</button>
-</form><br>
-<hr>
-<% end %>
+  </form>
+  <hr>
+  <% end %>
+
+</div>
 <div id="total">
-Total : £ <%= @total.to_f %>
+  Total : £ <%= @total.to_f %>
 </div>
 
 

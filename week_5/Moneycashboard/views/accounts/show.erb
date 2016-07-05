@@ -1,9 +1,11 @@
 
-
+<div id="results">
 <p>Type: <%= @account.type %><br></p>
 
 <p>Balance: <%= @account.balance.to_f %><br></p>
 <form>
     <button formaction="/account/<%=@account.id%>/transactions">Transactions</button>
 </form><br>
+</div>
+
 <!-- <a href="/account/<%=@account.id%>/transactions">View Transactions</a> -->
