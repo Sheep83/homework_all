@@ -1,14 +1,14 @@
 <h2>All Transactions for account <%=@account.type%></h2>
 
 <div id="results">
-<% @accounts.each do |account| %>
+  <% @accounts.each do |account| %>
   Account Type: <%= account['type'] %><br>
-  Amount: £ <%= account['amount'] %><br>
+  Amount: £ <%= sprintf('%.2f', account['amount'].to_f) %><br>
   <hr>
-<% end %>
+  <% end %>
 </div>
 <div id="total">
-Total: £ <%=@total%><br>
+  Total: £ <%= sprintf('%.2f', @total)%><br>
 </div>
 
-<a href="/account/<%=@account.id%>/transactions">Back</a>
+

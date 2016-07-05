@@ -76,18 +76,6 @@ class Transaction
     return result
   end
 
-  # def self.update(options)
-  #   sql = "UPDATE transactions SET 
-  #         merchant_id ='#{options['merchant_id']}',
-  #         tag_id ='#{options['tag_id']}',
-  #         amount ='#{options['amount']}',
-  #         trans_date = '#{options['trans_date']}',
-  #         description = '#{options['description']}',
-  #         type = #{options['type']}
-  #         WHERE id = '#{options['id']}';"
-  #   run_sql(sql)
-  # end
-
   def self.delete( id )
     sql = "DELETE FROM transactions WHERE id=#{id}"
     run_sql(sql)
@@ -100,6 +88,19 @@ class Transaction
   end
 
 end
+
+# def self.update(options)
+#   sql = "UPDATE transactions SET 
+#         merchant_id ='#{options['merchant_id']}',
+#         tag_id ='#{options['tag_id']}',
+#         amount ='#{options['amount']}',
+#         trans_date = '#{options['trans_date']}',
+#         description = '#{options['description']}',
+#         type = #{options['type']}
+#         WHERE id = '#{options['id']}';"
+#   run_sql(sql)
+# end
+
 
 
 

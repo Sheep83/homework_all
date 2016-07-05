@@ -1,6 +1,5 @@
 require('pg')
 require_relative('../db/sql_runner')
-require_relative('result')
 
 class Merchant
 
@@ -60,6 +59,5 @@ class Merchant
     end
     return total
   end
-
 
 end

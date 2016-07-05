@@ -5,7 +5,6 @@ require_relative('../models/account')
 require_relative('../models/merchant')
 require_relative('../models/tag')
 require_relative('../models/transaction')
-require_relative('../models/result')
 
 account1_init = {
   'type' => 'Current Account',
@@ -73,10 +72,6 @@ balance_update = {
   'amount' => '500'
 }
 
-# merch_update = {
-#   'name' => 'overclockers', 
-#   'id' => '1'
-# }
 
 account1 = Account.new( account1_init )
 account2 = Account.new( account2_init )
@@ -90,34 +85,16 @@ tag1 = Tag.new( tag1_init )
 tag2 = Tag.new( tag2_init )
 tag1.save
 tag2.save
-
-
-
 trans1 = Transaction.new( transaction1_init )
 trans2 = Transaction.new( transaction2_init )
 trans3 = Transaction.new( transaction3_init )
 trans4 = Transaction.new( transaction4_init )
-# binding.pry
 trans1.save
-# binding.pry
 trans2.save
 trans3.save
 trans4.save
 
-# binding.pry
 
-
-# select merchants.name, transactions.amount, transactions.trans_date FROM merchants INNER JOIN transactions ON transactions.merchant_id = merchants.id;
-
-# Transaction.by_tag(1)
-
-# Merchant.update(merch_update)
-
-# Transaction.delete(2)
-
-# Transaction.find(1)
-
-nil
 
 
 

@@ -42,11 +42,15 @@ end
 
 post'/transaction/:id' do 
   @transaction = Account.update(params)
+  binding.pry
   redirect to("/transaction/#{params[:id]}")
 end
 
 get '/transaction/:id/delete' do
-  # binding.pry
+  @transaction = Transaction.find(params[:id])
+  @account = Account.find(@transaction.account_id)
+  @account.balance = @account.balance += @transaction.amount.to_f
+  @account.update
   Transaction.delete( params[:id])
   redirect to('/transaction')
 end

@@ -1,15 +1,14 @@
 <h2>All Transactions for tag <%=@tag.name%></h2>
 
 <div id="results">
-<% @transactions.each do |transaction| %>
+  <% @transactions.each do |transaction| %>
   Tag: <%= transaction['name'] %><br>
-  Amount: £ <%= transaction['amount'] %><br>
+  Amount: £ <%= sprintf('%.2f', transaction['amount'].to_f) %><br>
   <hr>
-<% end %>
+  <% end %>
 </div>
 <div id="total">
-Total: £ <%=@total%><br>
+  Total: £ <%= sprintf('%.2f', @total) %><br>
 </div>
 <hr>
 
-<a href="/tag/<%=@tag.id%>/transactions">View Transactions</a>

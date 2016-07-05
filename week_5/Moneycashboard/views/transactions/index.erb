@@ -12,7 +12,7 @@
   <% @transactions.each do |transaction| %>
   Account Type : <%= transaction['type'] %><br>
   Merchant : <%= transaction['name'] %><br>
-  Amount: £ <%= transaction['amount'] %><br>
+  Amount: £ <%= sprintf('%.2f', transaction['amount'].to_f) %><br>
   <form>
     <button formaction="/transaction/<%=transaction['id']%>">View</button>
   </form> 
@@ -24,7 +24,7 @@
 
 </div>
 <div id="total">
-  Total : £ <%= @total.to_f %>
+  Total : £ <%= sprintf('%.2f', @total.to_f) %>
 </div>
 
 

@@ -1,15 +1,15 @@
 <div>
-<h2>All Transaction Tags</h2>
+  <h2>All Transaction Tags</h2>
 </div>
 <div>
-<a href="/tag/new">Add new tag</a><br>
+  <a href="/tag/new">Add new tag</a><br>
 </div>
 <div>
-<% @tags.each do |tag| %>
+  <% @tags.each do |tag| %>
   ID: <%= tag.id %><br>
   Tag description: <%= tag.name %><br>
   <a href="/tag/<%=tag.id%>">View</a><br>
   <hr>
-  </div>
+</div>
 <% end %>
 
