@@ -10,9 +10,9 @@
 <div id="results">
   <% @tags.each do |tag| %>
   ID: <%= tag.id %><br>
-  Tag description: <%= tag.name %>
+  Tag description:<br> 
+  <%= tag.name %>
   <form>
-    <br>
     <button formaction="/tag/<%=tag.id%>">View</button>
   </form>
   <hr>

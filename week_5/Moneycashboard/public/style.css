@@ -1,7 +1,6 @@
 body {
-  background-image: url('/dark-leather.png');
+  background-image: url('/paper4.jpg');
   background-attachment: fixed;
-  background-color: #b3d1ff;
   line-height: 1.5;
 }
 header  {
@@ -14,9 +13,9 @@ p  {
 
 
 .title{
-  background-image: url('/wood.jpg');
+  background-image: url('cash5.jpeg'); opacity: 0.7;
   border: 2px solid;
-  border-radius: 25px;
+  border-radius: 5px;
   padding: 5px;
   background-color: #99ff99;
   color: #004415;
@@ -31,7 +30,6 @@ p  {
 
 #subhead {
   padding: 2px;
-  background-image: url('/cash_bg.jpg');  
 }
 
 
@@ -46,10 +44,11 @@ h2 {
 
 div#hmenu { 
   border: 1px solid;
-  border-radius: 20px;
+  border-radius: 5px;
    margin: 0; 
-   padding: .3em 0 .3em 0; 
-   background: #ddeebb; 
+   padding: .3em 0 .3em 0;
+   background: linear-gradient(to bottom right, #ddeebb, #ffffff);
+   /*background: #ddeebb; */
    width: 100%; 
    text-align: center; 
   font-family: Helvetica;
@@ -106,8 +105,8 @@ div#hmenu ul a:hover{
 
 #footer {
   border: 1px solid;
-  border-radius: 25px;
-  background: #ddeebb;
+  border-radius: 5px;
+  background: linear-gradient(to bottom right, #ddeebb, #ffffff);
   width: 100%;
   height: auto;
   float: left;
