@@ -3,6 +3,7 @@
 <div id="results">
   <% @transactions.each do |transaction| %>
   Merchant Account : <%= transaction['name'] %><br>
+  Account : <%= transaction['type'] %><br>
   Amount: £ <%= sprintf('%.2f', transaction['amount'].to_f) %><br>
   <hr>
   <% end %>

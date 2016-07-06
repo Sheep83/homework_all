@@ -26,6 +26,7 @@ p  {
   font-weight: 500;
   line-height: 26.4px;
   text-shadow: 2px 2px 3px #29293d;
+  box-shadow: 10px 10px 5px #888888;
 }
 
 #subhead {
@@ -48,10 +49,11 @@ div#hmenu {
    margin: 0; 
    padding: .3em 0 .3em 0;
    background: linear-gradient(to bottom right, #ddeebb, #ffffff);
-   /*background: #ddeebb; */
    width: 100%; 
    text-align: center; 
   font-family: Helvetica;
+  box-shadow: 5px 5px 2px #888888;
+
 } 
 
 div#hmenu ul { 
@@ -111,6 +113,8 @@ div#hmenu ul a:hover{
   height: auto;
   float: left;
   clear: both;
+  box-shadow: 5px 5px 2px #888888;
+  padding-bottom: 2px;
 }
 
 div#total {

@@ -46,7 +46,7 @@ class Account
   end
 
   def transactions
-    sql = "SELECT accounts.type, transactions.amount FROM accounts INNER JOIN transactions ON transactions.account_id = accounts.id WHERE accounts.id = #{@id}"
+    sql = "SELECT transactions.id, accounts.type, transactions.amount, merchants.name FROM merchants INNER JOIN transactions ON merchants.id = transactions.merchant_id INNER JOIN accounts ON transactions.account_id = accounts.id WHERE accounts.id = #{@id}"
     result = run_sql(sql)
     return result
   end
@@ -61,10 +61,8 @@ class Account
 
   def total(options)
     total = 0
-    # binding.pry
     options.each do |transaction|
       total += transaction['amount'].to_f
-      # binding.pry
     end
     return total
   end

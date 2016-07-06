@@ -47,7 +47,7 @@ class Merchant
   end
 
   def transactions
-    sql = "SELECT merchants.name, transactions.amount FROM merchants INNER JOIN transactions ON transactions.merchant_id = merchants.id WHERE transactions.merchant_id = #{@id}"
+    sql = "SELECT transactions.id, accounts.type, transactions.amount, merchants.name FROM accounts INNER JOIN transactions ON accounts.id = transactions.account_id INNER JOIN merchants ON transactions.merchant_id = merchants.id WHERE merchants.id = #{@id}"
     result = run_sql(sql)
     return result
   end

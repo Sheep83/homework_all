@@ -17,7 +17,7 @@ class Tag
   end
 
   def transactions
-    sql = "SELECT tags.name, transactions.amount FROM tags INNER JOIN transactions ON transactions.tag_id = tags.id WHERE tags.id = #{@id}"
+    sql = "SELECT tags.name, transactions.id, accounts.type, transactions.amount, merchants.name FROM accounts INNER JOIN transactions ON accounts.id = transactions.account_id INNER JOIN merchants ON transactions.merchant_id = merchants.id INNER JOIN tags ON tags.id = transactions.tag_id WHERE tags.id = #{@id}"
     results = run_sql(sql)
     return results
   end
@@ -49,3 +49,5 @@ class Tag
 
 
 end
+
+
