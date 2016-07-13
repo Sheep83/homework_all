@@ -12,12 +12,21 @@ var customer = {
   },
   addItem: function (item) {
     for (var i = 0; i < store.length; i++) {
-      if(item == store[i]['name']) {
+      if(item === store[i]['name']) {
         basket.contents.push(store[i])
       }
     }
-    // body...
-  }
+  },
+  removeItem: function(item) {
+   for (var i = 0; i < basket.contents.length; i++) {
+    if(item === basket.contents[i]['name']) {
+      var index = i;
+      basket.contents.splice(i, 1);
+      
+    }
+  } 
+}
+
 }
 
 

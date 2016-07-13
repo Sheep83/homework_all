@@ -5,14 +5,14 @@ var assert = require( 'chai').assert;
 
 describe( 'Basket', function(){ 
   beforeEach(function(){
-     basket.contents = [];
-     basket.total = 0;
-   })
+   basket.contents = [];
+   basket.total = 0;
+ })
 
   it( 'can add item', function(){
-  customer.pick();
-  assert.equal(1, basket.contents.length)
- }),
+    customer.pick();
+    assert.equal(1, basket.contents.length)
+  }),
   it( 'can remove item', function(){
     customer.pick();
     customer.remove();
@@ -38,8 +38,16 @@ describe( 'Basket', function(){
     basket.add(customer);
     assert.equal(17.955, basket.total)
   }),
-  it( 'specific item', function(){
+  it( 'add specific item', function(){
     customer.addItem("cornflakes");
     assert.equal("cornflakes", basket.contents[0]['name'])
+  }),
+  it( 'remove specific item', function(){
+    customer.addItem("apple");
+    customer.addItem("cornflakes");
+    customer.removeItem("apple");
+    assert.equal("cornflakes", basket.contents[0]['name'])
   })
- })
+})
+
+
