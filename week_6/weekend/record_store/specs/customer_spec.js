@@ -50,15 +50,13 @@ describe('Customer', function(){
     store1.addRecord(record3);
     var customer1 = new Customer( "Brian", 100, [] );
     customer1.buyRecord( "Doolittle", store1);
-    customer1.buyRecord( "Stone Roses", store1);
-    customer1.buyRecord( "Ride the Lightning", store1);
-    assert.equal( 519.97, store1.cash ); 
-    assert.equal( 3, customer1.inventory.length );
-    assert.equal( 0, store1.inventory.length );
-    customer1.sellRecord( "Stone Roses", store1);
-    assert.equal( 2, customer1.inventory.length );
-    assert.equal( 1, store1.inventory.length );
-    assert.equal( 513.98, store1.cash ); 
+    assert.equal( 508.99, store1.cash ); 
+    assert.equal( 1, customer1.inventory.length );
+    assert.equal( 2, store1.inventory.length );
+    customer1.sellRecord( "Doolittle", store1);
+    assert.equal( 0, customer1.inventory.length );
+    assert.equal( 3, store1.inventory.length );
+    assert.equal( 500, store1.cash ); 
   })
 })
 
