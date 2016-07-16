@@ -12,7 +12,7 @@ describe('Record', function(){
     assert.equal( "Ride the Lightning", record1.title )
   }),
   it("has a price", function(){
-    var record1 = new Record ( "Metallica", "Ride the Lightning", 4.99)
+    var record1 = new Record ( "Metallica", "Ride the Lightning", 4.99);
     assert.equal( 4.99, record1.price )
   })
 })
