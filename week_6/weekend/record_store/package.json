@@ -1,0 +1,16 @@
+{
+  "name": "record_store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "customer.js",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "lodash": "^4.13.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
