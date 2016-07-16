@@ -35,7 +35,7 @@ describe('Store', function(){
     store1.listInventory();
     assert.equal( 2, store1.inventory.length )
   }),
-  it("sell record", function(){
+  it("can sell record", function(){
     var store1 = new Store( "Stone Grooves", "Aberdeen", [], 500 );
     var record1 = new Record ( "Metallica", "Ride the Lightning", 4.99);
     var record2 = new Record ( "Stone Roses", "Stone Roses", 5.99);
@@ -43,5 +43,16 @@ describe('Store', function(){
     store1.addRecord(record2);
     store1.sellRecord(record1);
     assert.equal( 504.99, store1.cash )
-  })  
+  }),
+  it("can report net worth", function(){
+    var store1 = new Store( "Stone Grooves", "Aberdeen", [], 500 );
+    var record1 = new Record ( "Metallica", "Ride the Lightning", 4.99);
+    var record2 = new Record ( "Stone Roses", "Stone Roses", 5.99);
+    var record3 = new Record ( "Pixies", "Doolittle", 8.99);
+    store1.addRecord(record1);
+    store1.addRecord(record2);
+    store1.addRecord(record3);
+    store1.finances();
+  })
+
 })

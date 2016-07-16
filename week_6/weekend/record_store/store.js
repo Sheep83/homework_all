@@ -25,9 +25,17 @@ Store.prototype = {
         var toSell = sold;
       }
     }
-    console.log(toSell);
     this.cash += toSell.price;
-    console.log(this.cash)
+  },
+  finances: function(){
+    var invValue = 0
+    for(record of this.inventory){
+      invValue += record.price;
+    }
+    console.log("Total Store Cash is : £ " + this.cash);
+    console.log("Total value of inventory is : £ " + invValue);
+    var netWorth = this.cash += invValue;
+    console.log("Total net worth of " + this.name + " is : £ " + netWorth);
   }
 }
 
