@@ -16,16 +16,14 @@ Store.prototype = {
       console.log("Artist : " + record.artist);
       console.log("Price : £ " + record.price);
       console.log(" ");
-
     }
   },
   sellRecord: function(record){
     for(sold of this.inventory){
       if(record.title === sold.title){
-        var toSell = sold;
+        this.cash += sold.price;
       }
     }
-    this.cash += toSell.price;
   },
   finances: function(){
     var invValue = 0

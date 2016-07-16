@@ -32,7 +32,7 @@ describe('Store', function(){
     var record2 = new Record ( "Stone Roses", "Stone Roses", 5.99);
     store1.addRecord(record1);
     store1.addRecord(record2);
-    store1.listInventory();
+    // store1.listInventory();
     assert.equal( 2, store1.inventory.length )
   }),
   it("can sell record", function(){
@@ -52,7 +52,7 @@ describe('Store', function(){
     store1.addRecord(record1);
     store1.addRecord(record2);
     store1.addRecord(record3);
-    store1.finances();
+    // store1.finances();
   })
 
 })
