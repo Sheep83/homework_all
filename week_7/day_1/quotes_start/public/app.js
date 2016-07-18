@@ -7,7 +7,7 @@ var Quote = function(text, author){
 
 function main(){
   var btn = document.getElementById('add-button');
-  btn.onclick = handleClick; 
+  btn.onclick = handleClick;
   var form = document.getElementById( 'quote-form' );
   form.onsubmit = function(){
     event.preventDefault();
@@ -16,7 +16,7 @@ function main(){
   var quotes = [];
   quote1 = new Quote ("There is more to life than increasing its speed. ", 'Mahatma Gandhi');
   quote2 = new Quote ("Life is really simple, but we insist on making it complicated. ", "Confucius");
-  quote3 = new Quote ("A great goal is when one full-back crosses for the other one to score. ", "Alex Ferguson");
+  quote3 = new Quote ("Willie Miller is the best penalty box defender in the world. ", "Alex Ferguson");
   quote4 = new Quote (" I tried being reasonable. I didn\'t like it. ", "Clint Eastwood");
   quotes.push(quote1);
   quotes.push(quote2);
@@ -41,6 +41,9 @@ function addToPage(quotes){
     
     li.appendChild(cite);
     ulist.appendChild(li);
+    li.onclick = function() {
+      this.parentNode.removeChild(this);
+      }
   }
 }
 
@@ -60,7 +63,15 @@ function appendQuote( text, author ){
   cite.innerText = author;
   li.appendChild( cite );
   ul.appendChild( li );
+  li.onclick = function() {
+    this.parentNode.removeChild(this);
+  }
 }
+
+
+
+
+
 
 
 

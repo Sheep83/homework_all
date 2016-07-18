@@ -99,4 +99,7 @@ blockquote {
   display:inline-block;
 }
 
+ul {
+  cursor:pointer;
+}
 
