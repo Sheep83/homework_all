@@ -8,11 +8,14 @@ var Quote = function(text, author){
 function main(){
   var btn = document.getElementById('add-button');
   btn.onclick = handleClick;
+  var e = document.getElementById('quote-text-input');
+  e.onkeypress  = function(){
+    document.getElementById('quote-preview').innerHTML = e.value;
+  }
   var form = document.getElementById( 'quote-form' );
   form.onsubmit = function(){
     event.preventDefault();
   }
-
   var quotes = [];
   quote1 = new Quote ("There is more to life than increasing its speed. ", 'Mahatma Gandhi');
   quote2 = new Quote ("Life is really simple, but we insist on making it complicated. ", "Confucius");
@@ -25,25 +28,21 @@ function main(){
   addToPage(quotes);
 }
 
-
 function addToPage(quotes){
   var ulist = document.getElementById( 'quote-list' );
 
   for (quote of quotes){
-    var text = quote.text;
-    var author = quote.author;
-
     var li = document.createElement( 'li' );
-    li.innerText = text;
+    li.innerText = quote.text;
 
     var cite = document.createElement( 'cite' );
-    cite.innerText = author;
+    cite.innerText = quote.author;
     
     li.appendChild(cite);
     ulist.appendChild(li);
     li.onclick = function() {
       this.parentNode.removeChild(this);
-      }
+    }
   }
 }
 
