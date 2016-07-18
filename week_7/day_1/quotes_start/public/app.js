@@ -9,7 +9,8 @@ function main(){
   var btn = document.getElementById('add-button');
   btn.onclick = handleClick;
   var e = document.getElementById('quote-text-input');
-  e.onkeypress  = function(){
+  e.onpropertychange = e.oninput;
+  e.oninput = function(){
     document.getElementById('quote-preview').innerHTML = e.value;
   }
   var form = document.getElementById( 'quote-form' );
@@ -25,24 +26,13 @@ function main(){
   quotes.push(quote2);
   quotes.push(quote3);
   quotes.push(quote4);
-  addToPage(quotes);
+  addAll(quotes);
 }
 
-function addToPage(quotes){
-  var ulist = document.getElementById( 'quote-list' );
-
+function addAll(quotes){
+  var ul = document.getElementById( 'quote-list' );
   for (quote of quotes){
-    var li = document.createElement( 'li' );
-    li.innerText = quote.text;
-
-    var cite = document.createElement( 'cite' );
-    cite.innerText = quote.author;
-    
-    li.appendChild(cite);
-    ulist.appendChild(li);
-    li.onclick = function() {
-      this.parentNode.removeChild(this);
-    }
+    appendQuote(quote.text, quote.author);
   }
 }
 
@@ -66,6 +56,7 @@ function appendQuote( text, author ){
     this.parentNode.removeChild(this);
   }
 }
+
 
 
 
