@@ -8,16 +8,16 @@ var Quote = function(text, author){
 function main(){
   var btn = document.getElementById('add-button');
   btn.onclick = handleClick; 
-  // var form = document.getElementById( 'quote-form' );
-  // form.onsubmit = function( event ){
-  //   event.preventDefault();
-  //   handleClick();
-  var quotes = [];
-  quote1 = new Quote ('quote text 1', 'brian');
-  quote2 = new Quote ('quote text 2', 'jay');
-  quote3 = new Quote ('quote text 3', 'rick');
-  quote4 = new Quote ('quote text 4', 'keith');
+  var form = document.getElementById( 'quote-form' );
+  form.onsubmit = function(){
+    event.preventDefault();
+  }
 
+  var quotes = [];
+  quote1 = new Quote ("There is more to life than increasing its speed. ", 'Mahatma Gandhi');
+  quote2 = new Quote ("Life is really simple, but we insist on making it complicated. ", "Confucius");
+  quote3 = new Quote ("A great goal is when one full-back crosses for the other one to score. ", "Alex Ferguson");
+  quote4 = new Quote (" I tried being reasonable. I didn\'t like it. ", "Clint Eastwood");
   quotes.push(quote1);
   quotes.push(quote2);
   quotes.push(quote3);
@@ -38,8 +38,8 @@ function addToPage(quotes){
 
     var cite = document.createElement( 'cite' );
     cite.innerText = author;
+    
     li.appendChild(cite);
-
     ulist.appendChild(li);
   }
 }
@@ -48,8 +48,8 @@ function handleClick(){
   var txtInput = document.getElementById('quote-text-input');
   var autInput = document.getElementById('author-text-input');
   appendQuote(txtInput.value, autInput.value);
-  console.log(txtInput.value);
-  // input.value = '';
+  txtInput.value = '';
+  autInput.value = '';
 }
 
 function appendQuote( text, author ){
