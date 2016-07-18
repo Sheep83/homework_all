@@ -8,24 +8,26 @@ var Quote = function(text, author){
 function main(){
   var btn = document.getElementById('add-button');
   btn.onclick = handleClick;
-  var e = document.getElementById('quote-text-input');
-  e.onpropertychange = e.oninput;
-  e.oninput = function(){
-    document.getElementById('quote-preview').innerHTML = e.value;
+  var input = document.getElementById('quote-text-input');
+  input.onpropertychange = input.oninput;
+  input.oninput = function(){
+    document.getElementById('quote-preview').innerHTML = input.value;
   }
   var form = document.getElementById( 'quote-form' );
   form.onsubmit = function(){
     event.preventDefault();
   }
   var quotes = [];
-  quote1 = new Quote ("There is more to life than increasing its speed. ", 'Mahatma Gandhi');
-  quote2 = new Quote ("Life is really simple, but we insist on making it complicated. ", "Confucius");
-  quote3 = new Quote ("Willie Miller is the best penalty box defender in the world. ", "Alex Ferguson");
-  quote4 = new Quote (" I tried being reasonable. I didn\'t like it. ", "Clint Eastwood");
+  quote1 = new Quote ("There is more to life than increasing its speed ", 'Mahatma Gandhi');
+  quote2 = new Quote ("Life is really simple, but we insist on making it complicated ", "Confucius");
+  quote3 = new Quote ("I love deadlines. I like the whooshing sound they make as they fly by ", "Douglas Adams");
+  quote4 = new Quote ("I tried being reasonable. I didn\'t like it ", "Clint Eastwood");
+  quote5 = new Quote ("The desire to be a poitician should bar you for life from ever being one ", "Billy Connolly");
   quotes.push(quote1);
   quotes.push(quote2);
   quotes.push(quote3);
   quotes.push(quote4);
+  quotes.push(quote5);
   addAll(quotes);
 }
 
@@ -47,7 +49,7 @@ function handleClick(){
 function appendQuote( text, author ){
   var ul = document.getElementById('quote-list');
   var li = document.createElement( 'li' );
-  li.innerText = text;
+  li.innerText = text += " - ";
   var cite = document.createElement( 'cite' );
   cite.innerText = author;
   li.appendChild( cite );
