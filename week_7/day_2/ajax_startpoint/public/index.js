@@ -8,12 +8,11 @@ window.onload = function(){
       var jsonString = request.responseText;
       var countries = JSON.parse( jsonString );
       populateSelect(countries);
-    }
-    
+    }  
   }
   displayStorage(localStorage);
   request.send( null );
-}  /// main function end
+}  /// onload function end
 
 function populateSelect(countries){
   var list = document.getElementById( 'drop-down-list' );
@@ -54,10 +53,6 @@ function displayData(event, countries){
     displayBorders.innerText = x;
     brdrs.appendChild(displayBorders);
   }
-  // brdrs.innerText = countries[index].name + " shares a border with : " + " " + borderList;
-  // infoBox.appendChild(cName);
-  // infoBox.appendChild(cPop);
-  // infoBox.appendChild(cCap);
   var array = [];
   array.push(countries[index].name, countries[index].population, countries[index].capital);
   localStorage.setItem('country_list', JSON.stringify(array));
@@ -65,7 +60,6 @@ function displayData(event, countries){
 
 function displayStorage(localStorage){
   var stored = JSON.parse( localStorage.getItem('country_list') );
-  console.log(stored);
   cName = document.getElementById( 'cName' );
   cPop = document.getElementById( 'cPop' );
   cCap = document.getElementById( 'cCap' );
