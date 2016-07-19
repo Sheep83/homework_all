@@ -29,14 +29,43 @@ function main(){
   quotes.push(quote4);
   quotes.push(quote5);
   addAll(quotes);
-}
 
-function addAll(quotes){
-  var ul = document.getElementById( 'quote-list' );
-  for (quote of quotes){
-    appendQuote(quote.text, quote.author);
-  }
-}
+  // for (var i of quotes){
+  //   quotelist.appendChild(createQuote(i,text, i.author));
+  // }
+  // form.onsubmit = function(event){
+  //   event.preventDefault();
+  //   tmpElement = appendQuote("", "");
+  //   resetForm();
+  // }
+
+  // var resetForm = function(){
+  //   quoteInput.value = "";
+  //   authorInput.value = "";
+  // }
+
+  // var handleKeyChange = function(){
+  //   if(quoteInput.value || authorInput.value){
+  //     modifyQuote(tmpElement, quoteInput.value, authorInput.value);
+  //     quotelist.appendChild(tmpElement);
+  //   }
+  // }
+
+  // var modifyQuote = function(el, newText, newAuthor){
+  //   el.childNodes[0].innerHTML = newText + " <cite> " + newAuthor + "</cite>";
+  // }
+
+  // quoteInput.oninput = handleKeyChange;
+  // authorInput.oninput = handleKeyChange;
+
+  // quotelist.onclick = function(event){
+  //   if (quotelist.lastChild === event.target.parentNode){
+  //     resetForm();
+  //   }
+  //   quotelist.removeChild(event.target.parentNode);
+  // }
+
+} //// end of main function
 
 function handleClick(){
   var txtInput = document.getElementById('quote-text-input');
@@ -56,6 +85,13 @@ function appendQuote( text, author ){
   ul.appendChild( li );
   li.onclick = function() {
     this.parentNode.removeChild(this);
+  }
+}
+
+function addAll(quotes){
+  var ul = document.getElementById( 'quote-list' );
+  for (quote of quotes){
+    appendQuote(quote.text, quote.author);
   }
 }
 
