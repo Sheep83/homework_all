@@ -30,12 +30,12 @@ function displayData(event, countries){
   var index = event.target.value;
   console.log(countries[index]);
   var infoBox = document.getElementById( 'info' );
-  cName = document.createElement( 'p' );
-  cPop = document.createElement( 'p' );
-  cCap = document.createElement( 'p');
-  cName.innerText = countries[index].name;
-  cPop.innerText = countries[index].population;
-  cCap.innerText = countries[index].capital;
+  cName = document.getElementById( 'cName' );
+  cPop = document.getElementById( 'cPop' );
+  cCap = document.getElementById( 'cCap' );
+  cName.innerText = "The country name is " + " " + countries[index].name;
+  cPop.innerText = "The population of " + countries[index].name + " is " + countries[index].population;
+  cCap.innerText = "The capital city of " + countries[index].name + " is " + countries[index].capital;
   infoBox.appendChild(cName);
   infoBox.appendChild(cPop);
   infoBox.appendChild(cCap);
