@@ -12,7 +12,7 @@ window.onload = function(){
   }
   displayStorage(localStorage);
   request.send( null );
-}  /// onload function end
+} 
 
 function populateSelect(countries){
   var list = document.getElementById( 'drop-down-list' );
@@ -54,18 +54,18 @@ function displayData(event, countries){
     brdrs.appendChild(displayBorders);
   }
   var array = [];
-  array.push(countries[index].name, countries[index].population, countries[index].capital);
+  array.push(countries[index].name, countries[index].population, countries[index].capital, countries[index].borders);
   localStorage.setItem('country_list', JSON.stringify(array));
 } 
 
 function displayStorage(localStorage){
-  var stored = JSON.parse( localStorage.getItem('country_list') );
+  var stored = JSON.parse( localStorage.getItem('country_list') ) || [];
   cName = document.getElementById( 'cName' );
   cPop = document.getElementById( 'cPop' );
   cCap = document.getElementById( 'cCap' );
-  cName.innerText = "The country name is " + " " + stored[0];
-  cPop.innerText = "The population of " + stored[0] + " is " + stored[1];
-  cCap.innerText = "The capital city of " + stored[0] + " is " + stored[2];
+  cName.innerHTML = "The country name is " + " " + stored[0] + "<hr>";
+  cPop.innerHTML = "The population of " + stored[0] + " is " + stored[1] + "<hr>";
+  cCap.innerHTML = "The capital city of " + stored[0] + " is " + stored[2] + "<hr>";
 }
 
 

@@ -4,10 +4,10 @@ html, body {
 }
 
 body {
-  background: linear-gradient(-170deg, red 0%, yellow 100%) no-repeat center center fixed; 
+  background-image: url('/map.jpg');
   background-size: cover;
   color: white;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 header {
@@ -18,13 +18,9 @@ header {
 }
 
 h1 {
+  color: #bbb3ff;
   text-align: center;
-  text-shadow: 5px 5px 2px black;
-}
-
-h5 {
-  text-align: center;
-  
+  text-shadow: 3px 3px 2px black;
 }
 
 #info{
@@ -42,22 +38,24 @@ h5 {
 }
 
 hr {
+  background-image: linear-gradient(to right, rgba(60, 60, 60, 0), rgba(60, 60, 60, 0.75), rgba(60, 60, 60, 0));
   border: 0;
   height: 1px;
-  background-image: linear-gradient(to right, rgba(60, 60, 60, 0), rgba(60, 60, 60, 0.75), rgba(60, 60, 60, 0));
 }
 
 #footer {
   border: 1px solid;
+  border-color: black;
   border-radius: 5px;
-  background: linear-gradient(-170deg, yellow 0%, red 100%) no-repeat center center fixed;
+  background: linear-gradient(-170deg, #b3d1ff 0%, #002966 100%) no-repeat center center;
   width: 100%;
   height: auto;
   float: left;
   clear: both;
   box-shadow: 5px 5px 2px black;
-  padding-bottom: 2px;
+  padding: 2px;
   margin-top: 20px;
+  color: #bbb3ff;
 }
 
 p {
