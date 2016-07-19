@@ -35,22 +35,26 @@ function displayData(event, countries){
   cName = document.getElementById( 'cName' );
   cPop = document.getElementById( 'cPop' );
   cCap = document.getElementById( 'cCap' );
-  cName.innerText = "The country name is " + " " + countries[index].name;
-  cPop.innerText = "The population of " + countries[index].name + " is " + countries[index].population;
-  cCap.innerText = "The capital city of " + countries[index].name + " is " + countries[index].capital;
+  cName.innerHTML = "The country name is " + " " + countries[index].name + "<hr>";
+  cPop.innerHTML = "The population of " + countries[index].name + " is " + countries[index].population + "<hr>";
+  cCap.innerHTML = "The capital city of " + countries[index].name + " is " + countries[index].capital + "<hr>";
   var borders = countries[index].borders;
   var prettyBorders = [];
   for (x of borders){
     for (y of countries){
       if (x === y.alpha3Code){
         prettyBorders.push(y.name);
-        console.log(prettyBorders);
       }
     }
   }
-  var borderList = prettyBorders.toString();
-  brdrs = document.getElementById( 'brdrs')
-  brdrs.innerText = countries[index].name + " shares a border with : " + " " + borderList;
+  brdrs = document.getElementById( 'brdrs');
+  brdrs.innerText = countries[index].name + " shares a border with : ";
+  for (x of prettyBorders) {
+    var displayBorders = document.createElement('p');
+    displayBorders.innerText = x;
+    brdrs.appendChild(displayBorders);
+  }
+  // brdrs.innerText = countries[index].name + " shares a border with : " + " " + borderList;
   // infoBox.appendChild(cName);
   // infoBox.appendChild(cPop);
   // infoBox.appendChild(cCap);
