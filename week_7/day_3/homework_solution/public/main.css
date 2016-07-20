@@ -1,0 +1,9 @@
+#map {
+  height: 500px;
+  width: 500px;
+  box-shadow: 5px 5px 2px; black;
+}
+
+#find-button {
+  margin-bottom: 10px;
+}
