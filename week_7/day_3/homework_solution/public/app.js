@@ -10,8 +10,13 @@ window.onload = function () {
             main(countries);
         }
     }
+    button = document.querySelector( 'button' );
+    button.addEventListener('click', function(){
+        var map = new Map ({lat: 0, lng: 0,}, 2);
+        var geo = new GeoLocator(map);
+        geo.setCenter();
+    })
     request.send();
-
 };
 
 var main = function (countries) {
@@ -46,16 +51,16 @@ var populateSelect = function (countries) {
 
 var updateDisplay = function (lala) {
     var tags = document.querySelectorAll('#info p');
-    console.log(tags);
     tags[0].innerText = lala.name;
     tags[1].innerText = lala.population;
     tags[2].innerText = lala.capital;
     var latLng = { lat: lala.latlng[0], lng: lala.latlng[1] }
-    var map = new Map(latLng, 5);
+    var map = new Map(latLng, 4);
     map.addMarker(latLng);
-    map.addInfoWindow(latLng, lala)
-
+    map.addInfoWindow(latLng, lala);
+    map.bindClick();
 }
+
 
 var Map = function( latLng, zoom ){
   this.googleMap = new google.maps.Map( document.getElementById( 'map' ), {
@@ -71,33 +76,37 @@ var Map = function( latLng, zoom ){
   })
     return marker;
 }
-  // this.bindClick = function() {
-  //   var counter = 1;
-  //   google.maps.event.addListener( this.googleMap, 'click', function(event){
-  //     var latLng = {lat: event.latLng.lat(), lng: event.latLng.lng()}
-  //     this.addMarker( latLng, counter.toString() );
-  //     counter += 1;
-  //   }.bind (this))
-  // }
+  this.bindClick = function() {
+    var counter = 1;
+    google.maps.event.addListener( this.googleMap, 'click', function(event){
+      var latLng = {lat: event.latLng.lat(), lng: event.latLng.lng()}
+      console.log(event);
+      this.addMarker( latLng, counter.toString() );
+      counter += 1;
+    }.bind (this))
+  }
+
   this.addInfoWindow = function( latLng, object ){
-    console.log(object);
     var marker = this.addMarker( latLng, object.name  )
     marker.addListener( 'click', function(){
         var infoWindow = new google.maps.InfoWindow({
           content: "<b>Country name :</b> " + object.name + "<br>" + "<b>Population : </b>" + object.population + "<br>" + "<b>Capital City : </b>" + object.capital
       })
-        console.log(infoWindow)
         infoWindow.open(this.map, marker)
     })
 }
 }
 
+
 var GeoLocator = function(map) {
     this.map = map;
     this.setCenter = function() {
       navigator.geolocation.getCurrentPosition( function( position ){
-        var pos = { lat: position.coords.latitude, lng: position.coords.longitude}
-        this.map.googleMap.panTo( pos );
+        var pos = { lat: position.coords.latitude, lng: position.coords.longitude};
+        var zoomLevel = 1
+        this.map.googleMap.panTo(pos);
+        this.map.addMarker(pos);
+        this.map.googleMap.setZoom(13);
     }.bind(this))
 
   }
