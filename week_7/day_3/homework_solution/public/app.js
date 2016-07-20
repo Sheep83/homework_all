@@ -49,15 +49,15 @@ var populateSelect = function (countries) {
     });
 }
 
-var updateDisplay = function (lala) {
+var updateDisplay = function (country) {
     var tags = document.querySelectorAll('#info p');
-    tags[0].innerText = lala.name;
-    tags[1].innerText = lala.population;
-    tags[2].innerText = lala.capital;
-    var latLng = { lat: lala.latlng[0], lng: lala.latlng[1] }
+    tags[0].innerText = country.name;
+    tags[1].innerText = country.population;
+    tags[2].innerText = country.capital;
+    var latLng = { lat: country.latlng[0], lng: country.latlng[1] }
     var map = new Map(latLng, 4);
     map.addMarker(latLng);
-    map.addInfoWindow(latLng, lala);
+    map.addInfoWindow(latLng, country);
     map.bindClick();
 }
 
@@ -76,21 +76,19 @@ var Map = function( latLng, zoom ){
   })
     return marker;
 }
-  this.bindClick = function() {
-    var counter = 1;
+
+this.bindClick = function() {
     google.maps.event.addListener( this.googleMap, 'click', function(event){
       var latLng = {lat: event.latLng.lat(), lng: event.latLng.lng()}
-      console.log(event);
-      this.addMarker( latLng, counter.toString() );
-      counter += 1;
-    }.bind (this))
-  }
+      this.addMarker( latLng );
+  }.bind (this))
+}
 
-  this.addInfoWindow = function( latLng, object ){
+this.addInfoWindow = function( latLng, object ){
     var marker = this.addMarker( latLng, object.name  )
     marker.addListener( 'click', function(){
         var infoWindow = new google.maps.InfoWindow({
-          content: "<b>Country name :</b> " + object.name + "<br>" + "<b>Population : </b>" + object.population + "<br>" + "<b>Capital City : </b>" + object.capital
+          content: "<b>Country :</b> " + object.name + "<br>" + "<b>Population : </b>" + object.population + "<br>" + "<b>Capital City : </b>" + object.capital
       })
         infoWindow.open(this.map, marker)
     })
