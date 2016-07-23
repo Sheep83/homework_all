@@ -34,3 +34,10 @@ a {
 
   text-decoration: none;
 }
+
+#img{
+  clear: both;
+  width: 400;
+  height: 300;
+  /*height: auto;*/
+}
