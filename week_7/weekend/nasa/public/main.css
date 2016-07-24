@@ -36,8 +36,15 @@ a {
 }
 
 #img{
+  margin: auto;
   clear: both;
-  width: 400;
-  height: 300;
-  /*height: auto;*/
+  width: 400px;
+  /*height: 300px;*/
+  height: auto;
 }
+
+input[type] {
+  margin: 10px;
+}
+
+ 

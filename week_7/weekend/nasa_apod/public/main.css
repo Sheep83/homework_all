@@ -1,0 +1,71 @@
+
+
+body {
+  /*background-size: cover;*/
+  font-size: 16px;
+}
+
+#info{
+  border: 2px solid black;
+  /*margin: auto;*/
+  padding: 5px;
+  width: 50%;
+  border-radius: 5px;
+  background-color: rgba( 0, 0, 0, 0.168676 );
+  box-shadow: 5px 5px 2px black;
+  color: black;
+}
+
+#separator {
+  width: 100%;
+  /*margin: 10px;*/
+  clear: both;
+}
+
+#dropDown{
+  margin-left: 10px;
+}
+
+button {
+
+  text-decoration: none;
+}
+
+a {
+
+  text-decoration: none;
+}
+
+#img{
+  padding: 10px;
+  margin: auto;
+  float: left;
+  width: 45%;
+  height: auto;
+}
+
+input[type] {
+  margin: 10px;
+}
+
+h1{
+  margin: auto;
+  /*clear: both;*/
+  width: 100%;
+  height: auto;
+
+}
+
+#subheading{
+  padding-top: 10px;
+  margin: auto;
+  /*clear: both;*/
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+
+ 

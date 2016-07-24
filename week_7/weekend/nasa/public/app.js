@@ -10,14 +10,12 @@ window.onload = function () {
             var jsonString = request.responseText;
             var data = JSON.parse(jsonString);
             console.log(data);
-            main(data);
             
         }
+            main(data);
+        
     }
-    // button = document.createElement( 'button' );
-    // button.addEventListener('click', function(){
-    //     console.log('JPL redirect...')
-    // })
+    
     request.send();
 };
 
@@ -68,9 +66,7 @@ function showImage(src, width, height, alt) {
 }
 
 var populateSelect = function (data) {
-    // var curiosityRover = [];
-    // var spiritRover = [];
-    // console.log(data);
+    console.log(data);
     var dropDown = document.querySelector('#dropDown');
     data.photos.forEach(function (item, index) {
         item.index = index;
@@ -88,5 +84,3 @@ var populateSelect = function (data) {
         localStorage.setItem("selectedImg",JSON.stringify(img));
     });
 }
-
-
