@@ -8,17 +8,25 @@
 </head>
 
 <body>
-    <h1><center>Astronomy Pic of the Day</center></h1>
-    <div id ="subheading"></div>
+<div id = 'top-container'>
+    <div id = 'topbar'>
+    <h1><center>Astronomy Pic of the Day<center></h1>
+    </div>
+    <div id ="subheading">
+    </div>
+</div>
     <form>
         <input id = "inputDate" type="date" name="apodDate">
-        <div id="separator" class='grow'></div>
-        <button id = "random" class = 'grow' type="button">Random APoD</button>
-        </div>
         <div id="separator"></div>
         <select style="display:none" id="history">
         </select>
-        <div id="separator"></div>  
+        <div id="separator"></div>
+        <button id = "random" class = 'grow' type="button">Random APoD</button>
+        </div>
+        <div id="separator"></div>
+        <div id = "button-container">
+        <button id = "fullSize" class = 'grow' type="button">Full Size</button> 
+        </div> 
     </form>
     <a href='/'>
     <div id = 'img' class = 'grow' align = 'center'></div>  

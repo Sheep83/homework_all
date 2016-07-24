@@ -4,9 +4,12 @@ window.onload = function () {
     var calendar = document.getElementById('inputDate');
     var button = document.getElementById('random');
     var historyDropDown = document.getElementById('history');
+    // var fullSizeButton = document.getElementById('fullSize');
+    // console.log(fullSizeButton);
     calendar.onchange = getByDate;
     button.onclick = randomDate;
     historyDropDown.onchange = getFromHistory;
+    // fullSizeButton.onclick = showFullSize;
     console.log(url);
     var request = new XMLHttpRequest();
     request.open("GET", url);
@@ -24,11 +27,14 @@ window.onload = function () {
 var apodDisplay = function(data){
     var stats = document.querySelectorAll('#info p');
     var title = document.getElementById('subheading');
+    var image = document.getElementById('fullSize');
+    console.log(image);
+    image.innerHTML = "<a href= '"+ data.hdurl + "'>Full Size"
     title.innerHTML = "<b><center>" + data.title + "</center></b>"
     stats[0].innerHTML = "<b>Description : </b>" + data.explanation;
     stats[1].innerHTML = "<b>Copyright : </b>" + data.copyright;
     stats[2].innerHTML = "<b>Date : </b>" + data.date;
-    showImage(data.url, 400, 300, data.url)
+    showImage(data.url, 500, 375, data.url)
 
 }
 var showImage = function(src, width, height, alt) {
@@ -124,5 +130,10 @@ var getFromHistory = function(event){
     console.log(index);    
     apodDisplay(img);
     // localStorage.setItem("selectedImg",JSON.stringify(img));
+}
+
+var showFullSize = function(event){
+    console.log(event);
+    // window.location.pathname = '' + '/otherpage';
 }
 

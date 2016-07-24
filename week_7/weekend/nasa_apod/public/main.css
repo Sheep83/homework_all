@@ -2,19 +2,38 @@
 
 body {
   font-size: 16px;
+  background-image: url('Moon 09_09_2012 05_19_31.jpg');
+  /*background-repeat: no-repeat;*/
+  /*background-size: cover;*/
+
+}
+
+#top-container{
+  border-radius: 5px;
+  border: 3px solid black;
+  background: rgba(186, 190, 192, .5);
+  /*background: #3a7999;*/
+  margin-bottom: 10px;
+  color: #f2f2f2;
+}
+#logo{
+  height: 90px;
+  width: 90px;
+  margin: 1px;
+  position: absolute;
+  text-align: left;
+  /*clear: all;*/
 }
 
 #info{
-  background: #3a7999;
+  background: rgba(186, 190, 192, .5);
   color: #f2f2f2;
   border: 2px solid black;
   margin: auto;
   padding: 5px;
   width: 95%;
   border-radius: 5px;
-  /*background-color: rgba( 0, 0, 0, 0.168676 );*/
   box-shadow: 5px 5px 2px black;
-  /*color: black;*/
 }
 
 #separator {
@@ -27,12 +46,6 @@ body {
   margin-left: 10px;
 }
 
-button {
-  padding: 8px;
-  text-decoration: none;
-  margin-bottom: 10px;
-  box-shadow: 5px 5px 2px black;
-}
 
 a {
 
@@ -45,19 +58,9 @@ a {
   padding-top:20px;
   padding-left:20px;
   /*margin: auto;*/
-  /*float: left;*/
-  width: 400;
-  height: 300;
-  height: auto;
-}
-
-input[type] {
-  margin: 10px;
-}
-
-h1{
-  margin: auto;
-  width: 100%;
+  /*float: right;*/
+  /*width: 400;
+  height: 300;*/
   height: auto;
 
 }
@@ -65,18 +68,22 @@ h1{
 #subheading{
   padding-top: 10px;
   margin: auto;
+  margin-bottom: 5px;
   width: 100%;
   height: auto;
   clear: both;
 }
 
 button {
+  padding: 8px;
   text-decoration: none;
-  border: none;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 2px black;
+  border: 1px;
+  border-color: black;
   background: #3a7999;
   color: #f2f2f2;
-  padding: 10px;
-  font-size: 16px;
+  font-size: 14px;
   border-radius: 5px;
   position: relative;
   box-sizing: border-box;
@@ -85,7 +92,7 @@ button {
 
 img:hover {
   transform: skew(-10deg);
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 img{
@@ -95,7 +102,8 @@ img{
 }
 
 button:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
+  cursor: pointer;
 }
 button:focus {
     outline:none;
@@ -106,6 +114,11 @@ form{
   height:370px;
   float: left;
 }
+
+#topbar{
+  height: auto;
+}
+
 
 
 
