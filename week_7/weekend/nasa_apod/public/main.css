@@ -5,6 +5,7 @@ body {
   background-image: url('Moon 09_09_2012 05_19_31.jpg');
   /*background-repeat: no-repeat;*/
   /*background-size: cover;*/
+  text-decoration: none;
 
 }
 
@@ -16,6 +17,11 @@ body {
   margin-bottom: 10px;
   color: #f2f2f2;
 }
+
+#button-container{
+  text-decoration: none;
+}
+
 #logo{
   height: 90px;
   width: 90px;
@@ -26,7 +32,7 @@ body {
 }
 
 #info{
-  background: rgba(186, 190, 192, .5);
+  background: rgba(186, 190, 192, .9);
   color: #f2f2f2;
   border: 2px solid black;
   margin: auto;
@@ -58,7 +64,7 @@ a {
   padding-top:20px;
   padding-left:20px;
   /*margin: auto;*/
-  /*float: right;*/
+  /*float: left;*/
   /*width: 400;
   height: 300;*/
   height: auto;
@@ -92,10 +98,11 @@ button {
 
 img:hover {
   transform: skew(-10deg);
-  transform: scale(1.08);
+  transform: scale(1.75);
 }
 
 img{
+  border: 2px solid black;
   border-radius: 5px;
   transition: all 500ms ease;
   box-shadow: 5px 5px 2px black;
@@ -107,6 +114,7 @@ button:hover {
 }
 button:focus {
     outline:none;
+    text-decoration: none;
 }
 
 form{
@@ -118,6 +126,8 @@ form{
 #topbar{
   height: auto;
 }
+
+
 
 
 
