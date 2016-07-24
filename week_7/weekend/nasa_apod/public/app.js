@@ -30,14 +30,16 @@ var apodDisplay = function(data){
     console.log(data);
     image.innerHTML = "<a href= '"+ data.hdurl + "'>Full Size"
     title.innerHTML = "<b><center>" + data.title + "</center></b>"
-    stats[0].innerHTML = "<b>Description : </b>" + data.explanation;
+    stats[0].innerHTML = "" + data.explanation;
+    console.log(data.copyright);
     stats[1].innerHTML = "<b>Copyright : </b>" + data.copyright;
     stats[2].innerHTML = "<b>Date : </b>" + data.date;
     console.log(data);
     if (data.media_type === "image"){
         showImage(data.url, 500, 375, data.url);
     }else if (data.media_type === 'video'){
-        showVideo(data.url);
+        showImage('/Under-construction.jpeg', 500, 375, '/Under-construction.jpeg');
+        console.log('Video Support Coming Soon!')
     }
 
 }
@@ -141,7 +143,7 @@ var populateHistory = function(visitedArray){
         item.index = index;
         var option = document.createElement("option");
         option.value = index.toString();
-        option.text = item.date;
+        option.text = item.title;
         historyDropDown.appendChild(option);
     });
     historyDropDown.style.display = 'block';

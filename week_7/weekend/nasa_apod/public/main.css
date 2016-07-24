@@ -15,7 +15,7 @@ body {
   background: rgba(186, 190, 192, .5);
   /*background: #3a7999;*/
   margin-bottom: 10px;
-  color: #f2f2f2;
+  color: #333333;
 }
 
 #button-container{
@@ -33,10 +33,10 @@ body {
 
 #info{
   background: rgba(186, 190, 192, .9);
-  color: #f2f2f2;
+  color: #333333;
   border: 2px solid black;
   margin: auto;
-  padding: 5px;
+  padding: 20px;
   width: 95%;
   border-radius: 5px;
   box-shadow: 5px 5px 2px black;
@@ -59,6 +59,7 @@ a {
 }
 
 #img{
+  /*align-items: center;*/
   margin-right: 20px;
   padding-bottom:20px;
   padding-top:20px;
@@ -97,7 +98,7 @@ button {
 }
 
 img:hover {
-  transform: skew(-10deg);
+  /*transform: skew(-10deg);*/
   transform: scale(1.75);
 }
 
@@ -109,7 +110,7 @@ img{
 }
 
 button:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
   cursor: pointer;
 }
 button:focus {
@@ -118,6 +119,10 @@ button:focus {
 }
 
 form{
+  /*background: rgba(186, 190, 192, .5);*/
+  /*border: 2px solid black;*/
+  /*border-radius: 5px;*/
+  /*box-shadow: 5px 5px 2px black;*/
   width: 300px;
   height:370px;
   float: left;
@@ -125,6 +130,25 @@ form{
 
 #topbar{
   height: auto;
+}
+
+select {
+    font-size:9pt;
+    letter-spacing:0.07em;
+    color:#808080;
+    /*background:transparent;*/
+    border: solid 1px #808080;
+    padding:3px;
+    cursor:pointer;
+}
+select option { padding: 1px 5px 1px 3px;}
+select option[selected]{ color:#303030; }
+select option:nth-child(even) { background-color:#e5e5e5; }
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(60, 60, 60, 0), rgba(60, 60, 60, 0.75), rgba(60, 60, 60, 0));
 }
 
 
