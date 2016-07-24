@@ -37,14 +37,14 @@ var showImage = function(src, width, height, alt) {
         imgDiv.removeChild(imgDiv.firstChild);
         var img = document.createElement("img");
         img.src = src;
-        img.width = 400;
-        img.height = 300;
+        img.width = 500;
+        img.height = 375;
         img.alt = src;
         imgDiv.appendChild(img);
     }else{var img = document.createElement("img");
     img.src = src;
-    img.width = 400;
-    img.height = 300;
+    img.width = 500;
+    img.height = 375;
     img.alt = src;
     imgDiv.appendChild(img);
 }
@@ -73,6 +73,7 @@ var randomDate = function(){
           var data = JSON.parse(jsonString);
           visited.push(data);
           console.log(visited);
+          // localStorage.setItem("selectedHistory",JSON.stringify(data));
       }
       
       main(data);
@@ -91,6 +92,8 @@ var getByDate = function(event){
             var jsonString = request.responseText;
             var data = JSON.parse(jsonString);
             visited.push(data);
+            var length = localStorage.length;
+            // localStorage.setItem("selectedHistory",JSON.stringify(data));
             console.log(visited);    
     }
         main(data);
@@ -99,7 +102,8 @@ var getByDate = function(event){
 }
 
 var populateHistory = function(visitedArray){
-    console.log(visitedArray);
+    // var objects = localStorage.getItem("selectedHistory",JSON.parse);
+    // console.log(objects.size);
     var historyDropDown = document.querySelector('#history');
     historyDropDown.innerHTML = ""
     visitedArray.forEach(function (item, index) {
