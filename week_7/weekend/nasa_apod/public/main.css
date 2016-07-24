@@ -9,7 +9,7 @@ body {
   border: 2px solid black;
   /*margin: auto;*/
   padding: 5px;
-  width: 50%;
+  width: 90%;
   border-radius: 5px;
   background-color: rgba( 0, 0, 0, 0.168676 );
   box-shadow: 5px 5px 2px black;
@@ -18,7 +18,7 @@ body {
 
 #separator {
   width: 100%;
-  /*margin: 10px;*/
+  margin-top: 5px;
   clear: both;
 }
 
@@ -39,10 +39,11 @@ a {
 }
 
 #img{
-  padding: 10px;
+  padding: 5px;
   margin: auto;
   float: left;
-  width: 45%;
+  width: 400;
+  height: 300;
   height: auto;
 }
 

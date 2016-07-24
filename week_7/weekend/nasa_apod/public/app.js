@@ -1,4 +1,5 @@
 window.onload = function () {
+    visited = [];
     var url = 'https://api.nasa.gov/planetary/apod?&api_key=T1AUnT68vq8FeqlfaGROtZl5h6mk9iMoz9Z7MKNy';
     var calendar = document.getElementById('inputDate');
     var button = document.getElementById('random');
@@ -23,31 +24,32 @@ var apodDisplay = function(data){
     var title = document.getElementById('subheading');
     title.innerHTML = "<b><center>" + data.title + "</center></b>"
     stats[0].innerHTML = "<b>Description : </b>" + data.explanation;
-        stats[1].innerHTML = "<b>Copyright : </b>" + data.copyright;
-        stats[2].innerHTML = "<b>Date : </b>" + data.date;
-        showImage(data.url, 400, 300, data.url)
-     
-    }
+    stats[1].innerHTML = "<b>Copyright : </b>" + data.copyright;
+    stats[2].innerHTML = "<b>Date : </b>" + data.date;
+    showImage(data.url, 400, 300, data.url)
+
+}
 var showImage = function(src, width, height, alt) {
-        var imgDiv = document.getElementById('img');
-        if (imgDiv.firstChild){
-            imgDiv.removeChild(imgDiv.firstChild);
-            var img = document.createElement("img");
-            console.log(img);
-            img.src = src;
-            img.width = 400;
-            img.height = 300;
-            img.alt = src;
-            imgDiv.appendChild(img);
-        }else{var img = document.createElement("img");
-            img.src = src;
-            img.width = 400;
-            img.height = 300;
-            img.alt = src;
-            imgDiv.appendChild(img);
-        }
-        
-    }
+    var imgDiv = document.getElementById('img');
+    if (imgDiv.firstChild){
+        console.log(imgDiv.firstChild);
+
+        imgDiv.removeChild(imgDiv.firstChild);
+        var img = document.createElement("img");
+        img.src = src;
+        img.width = 400;
+        img.height = 300;
+        img.alt = src;
+        imgDiv.appendChild(img);
+    }else{var img = document.createElement("img");
+    img.src = src;
+    img.width = 400;
+    img.height = 300;
+    img.alt = src;
+    imgDiv.appendChild(img);
+}
+
+}
 
 var main = function(data){
     apodDisplay(data);
@@ -55,13 +57,13 @@ var main = function(data){
 
 var randomDate = function(){
   array = [];
+  // console.log(history);
   randDay = Math.floor((Math.random() * 28) + 1);
   randMonth = Math.floor((Math.random() * 12) + 1);
   randYear = Math.floor(Math.random() * (2015 - 1996) + 1996);
   array.push(randYear, randMonth, randDay);
   randDate = array.join('-');
   console.log(randDate);
-
   url = 'https://api.nasa.gov/planetary/apod?date=' + randDate + '&api_key=T1AUnT68vq8FeqlfaGROtZl5h6mk9iMoz9Z7MKNy';
   var request = new XMLHttpRequest();
   request.open("GET", url);
@@ -70,7 +72,9 @@ var randomDate = function(){
           var jsonString = request.responseText;
           var data = JSON.parse(jsonString);
       }
-      main(data)
+      visited.push(data);
+      console.log(visited);
+      main(data);
   }
   request.send();
 }
@@ -87,7 +91,9 @@ var getByDate = function(event){
             var jsonString = request.responseText;
             var data = JSON.parse(jsonString);
         }
-        main(data)
+        visited.push(data);
+        console.log(visited);
+        main(data);
     }
     request.send();
 }
