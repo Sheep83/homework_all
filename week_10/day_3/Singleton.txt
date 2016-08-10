@@ -1,0 +1,9 @@
+Singleton Design Pattern
+
+- to be used when one, and only one instance of a class is required. Typical examples would be print spoooler or drivers.
+
+-all singleton classes should conform to the following - 
+- should have a private constructor to ensure class instance cannot be created from outside the class
+- should have a private static variable that represents the only instance of that class. variable should be static to provide global access to the variable from anywhere in the program
+- should have a public method that returns the instance of the class or creates one if none exists, typically getInstance(). this is referred to as an accessor method.
+
