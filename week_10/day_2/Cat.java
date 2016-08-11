@@ -31,8 +31,8 @@ public class Cat{
   }
 
   ////java array.pop hack
-  public void miniSpew(){
-    belly.remove(belly.size()-1);
+  public Edible miniSpew(){
+    return belly.remove(belly.size()-1);
   }
 
   public String snort(Catnip catnip){

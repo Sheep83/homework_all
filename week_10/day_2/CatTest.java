@@ -48,11 +48,13 @@ public class CatTest{
     assertEquals(0, cat.foodEaten());
   }
 
+
   @Test
   public void canThrowUpOnlyLastItemEaten(){
     cat.eat(fish);
     cat.eat(catfood);
-    cat.miniSpew();
+    CatFood thrownUp = (CatFood)cat.miniSpew();
+    assertEquals(thrownUp.getClass().getSimpleName(), "CatFood");
     assertEquals(1, cat.foodEaten());
   }
 

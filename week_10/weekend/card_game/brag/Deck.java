@@ -23,6 +23,11 @@ public class Deck {
         return cards;
     }
 
+    public void dealCard (){
+      this.cards.remove(0);
+      System.out.println(this.cards.size());
+    }
+
     // public static void main(String[] args){
     //     Deck deck = new Deck();
 

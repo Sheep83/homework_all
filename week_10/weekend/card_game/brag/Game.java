@@ -21,17 +21,8 @@ public class Game {
   public void createPlayers(){
     player1 = new Player("Brian");
     player2 = new Player("Josh");
+  }
 
   }
 
-  // public static void main(String[] args){
-          
-  //         Deck deck = new Deck();
-
-
-  //         //print out the deck.
-  //         System.out.println(deck.getDeck());
-  //         game.getPlayer();
-  //         System.out.println(player1.name);
-      // }
-}
+  
