@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Star Wars Eight Ball</string>
+    <string name="question">Ask a question</string>
+    <string name="ask_yoda">Ask Yoda</string>
+    <string name="ask_vader">Ask Vader</string>
+    <string name="yoda_answer">Yoda Says...</string>
+    <string name="vader_answer">Vader Says...</string>
+</resources>
