@@ -1,0 +1,7 @@
+---MoviesBox   State:[{movies list}] (array of objects)
+ --MoviesList  Props: Movies (array of objects)
+  -Movie       Props: Movie   (object)
+ --Button      Props: handleSubmit (function)
+
+ 
+
