@@ -1,10 +1,10 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var MoviesBox = require('./components/MoviesBox')
+var MoviesBox = require('./components/BankBox')
 
 window.onload = function(){
   ReactDOM.render(
-    <MoviesBox />,
+    <BankBox />,
     document.getElementById('app')
   );
 }

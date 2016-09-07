@@ -1,6 +1,6 @@
 var React = require('react')
-var MovieSelect = require('./MovieSelect')
-var MovieDetails = require('./MovieDetails')
+// var MovieSelect = require('./MovieSelect')
+// var MovieDetails = require('./MovieDetails')
 var _ = require('lodash')
 
 var MoviesBox = React.createClass({

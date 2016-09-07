@@ -19755,9 +19755,9 @@
 	'use strict';
 	
 	var React = __webpack_require__(1);
-	var MovieSelect = __webpack_require__(162);
-	var MovieDetails = __webpack_require__(163);
-	var _ = __webpack_require__(160);
+	var MovieSelect = __webpack_require__(160);
+	var MovieDetails = __webpack_require__(161);
+	var _ = __webpack_require__(162);
 	
 	var MoviesBox = React.createClass({
 	  displayName: 'MoviesBox',
@@ -19808,6 +19808,106 @@
 
 /***/ },
 /* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var MovieDetails = __webpack_require__(161);
+	
+	var MovieSelect = React.createClass({
+	  displayName: 'MovieSelect',
+	
+	
+	  getInitialState: function getInitialState() {
+	    return { selectedIndex: null };
+	  },
+	
+	  handleChange: function handleChange(event) {
+	    var newIndex = event.target.value;
+	    this.setState({ selectedIndex: newIndex });
+	    this.props.setCurrentMovie(this.props.movies[newIndex]);
+	  },
+	
+	  render: function render() {
+	    var movies = this.props.movies.map(function (movie) {
+	      return React.createElement(
+	        'option',
+	        { value: this.props.movies.indexOf(movie), key: this.props.movies.indexOf(movie) },
+	        movie.show_title
+	      );
+	    }.bind(this));
+	
+	    return React.createElement(
+	      'select',
+	      { value: this.state.selectedIndex, onChange: this.handleChange },
+	      movies
+	    );
+	  }
+	});
+	
+	module.exports = MovieSelect;
+
+/***/ },
+/* 161 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	
+	var MovieDetails = React.createClass({
+	  displayName: 'MovieDetails',
+	
+	  render: function render() {
+	    if (!this.props.movie) {
+	      return React.createElement(
+	        'h4',
+	        null,
+	        'Nothing selected'
+	      );
+	    }
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'h4',
+	        null,
+	        this.props.movie.show_title
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'Year of release: ',
+	        this.props.movie.release_year
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'Cast: ',
+	        this.props.movie.show_cast
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'Synopsis: ',
+	        this.props.movie.summary
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        'Run Time: ',
+	        this.props.movie.runtime
+	      ),
+	      React.createElement('img', { src: this.props.movie.poster, alt: this.props.movie.poster })
+	    );
+	  }
+	});
+	
+	module.exports = MovieDetails;
+
+/***/ },
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global, module) {/**
@@ -36544,10 +36644,10 @@
 	  }
 	}.call(this));
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(161)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(163)(module)))
 
 /***/ },
-/* 161 */
+/* 163 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -36561,106 +36661,6 @@
 		return module;
 	}
 
-
-/***/ },
-/* 162 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var React = __webpack_require__(1);
-	var MovieDetails = __webpack_require__(163);
-	
-	var MovieSelect = React.createClass({
-	  displayName: 'MovieSelect',
-	
-	
-	  getInitialState: function getInitialState() {
-	    return { selectedIndex: null };
-	  },
-	
-	  handleChange: function handleChange(e) {
-	    var newIndex = e.target.value;
-	    this.setState({ selectedIndex: newIndex });
-	    this.props.setCurrentMovie(this.props.movies[newIndex]);
-	  },
-	
-	  render: function render() {
-	    var movies = this.props.movies.map(function (movie) {
-	      return React.createElement(
-	        'option',
-	        { value: this.props.movies.indexOf(movie), key: this.props.movies.indexOf(movie) },
-	        movie.show_title
-	      );
-	    }.bind(this));
-	
-	    return React.createElement(
-	      'select',
-	      { value: this.state.selectedIndex, onChange: this.handleChange },
-	      movies
-	    );
-	  }
-	});
-	
-	module.exports = MovieSelect;
-
-/***/ },
-/* 163 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var React = __webpack_require__(1);
-	
-	var MovieDetails = React.createClass({
-	  displayName: 'MovieDetails',
-	
-	  render: function render() {
-	    if (!this.props.movie) {
-	      return React.createElement(
-	        'h4',
-	        null,
-	        'Nothing selected'
-	      );
-	    }
-	    return React.createElement(
-	      'div',
-	      null,
-	      React.createElement(
-	        'h4',
-	        null,
-	        this.props.movie.show_title
-	      ),
-	      React.createElement(
-	        'p',
-	        null,
-	        'Year of release: ',
-	        this.props.movie.release_year
-	      ),
-	      React.createElement(
-	        'p',
-	        null,
-	        'Cast: ',
-	        this.props.movie.show_cast
-	      ),
-	      React.createElement(
-	        'p',
-	        null,
-	        'Synopsis: ',
-	        this.props.movie.summary
-	      ),
-	      React.createElement(
-	        'p',
-	        null,
-	        'Run Time: ',
-	        this.props.movie.runtime
-	      ),
-	      React.createElement('img', { src: this.props.movie.poster, alt: this.props.movie.poster })
-	    );
-	  }
-	});
-	
-	module.exports = MovieDetails;
 
 /***/ }
 /******/ ]);
